@@ -30,11 +30,14 @@ ul {
 }
 
 .nav-wrapper {
+    height: 85px;
     background-image: linear-gradient(
     to bottom right,
     #FF23B8,
     #d4108e
   );
 }
+
+
 
 </style>
