@@ -1,21 +1,23 @@
 <template>
-  
     <div id="app">
-      <navbar1 />
+         <navbar1 />
+         <footer1/>
     </div>
-  
 </template>
 
 <script>
+import footer1 from "../components/footer.vue";
 import navbar1 from "../components/navbar.vue";
-
 export default {
   name: 'home',
   components: {
+    footer1
     navbar1
   }
 }
+
 </script>
+
 
 <style>
 #app {
