@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
 
   // PASSWORDS TABLE
   // ADD ASSOCIATION FOREIGN KEY WITH USERS
-  const Passwords = sequelize.define("password", {
+  const Password = sequelize.define("Password", {
     id_user: {
       type: Sequelize.INTEGER,
     },
@@ -13,5 +13,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Passwords;
+  return Password;
 };

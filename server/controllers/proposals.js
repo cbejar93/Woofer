@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const db = require('../models');
+const db = require('./../models');
 
 router.get('/getproposals/:renter_id/:rentee_id', function(req, res) {
     var renterId = req.params.renter_id;
     var renteeId = req.params.rentee_id;
     db.Proposal.findAll({
         where: {
-            renter_id: renter_id,
-            rentee_id: rentee_id
+            renter_id: renterId,
+            rentee_id: renteeId
         }
     }).then(results => res.send(results));
 });
