@@ -1,25 +1,28 @@
-// REQUIRED DEPENDENCIES
-const Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes) {
+  // REQUIRED DEPENDENCIES
+  const Sequelize = require("sequelize");
 
-// USERS TABLE
-// ADD ASSOCIATION FOREIGN KEY TO USERS
-const Dogs = sequelize.define('dog', {
+  // USERS TABLE
+  // ADD ASSOCIATION FOREIGN KEY TO USERS
+  const Dogs = sequelize.define("dog", {
     name: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     age: {
-        type: Sequelize.INTEGER
+      type: Sequelize.INTEGER
     },
     tempermant: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     breed: {
-    type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     userId: {
-        type: sequelize.INTEGER
+      type: Sequelize.INTEGER
     },
     imgPath: {
-        type: Sequelize.STRING
+      type: Sequelize.STRING
     }
   });
+  return Dogs;
+};
