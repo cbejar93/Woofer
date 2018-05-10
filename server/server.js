@@ -1,14 +1,15 @@
 const express = require('express'); 
 const bodyParser = require('body-parser'); 
-const morgan = require('morgan');
 const app = express();
 
-morgan('tiny');
 //  Import controllers 
 const renter = require('./controllers/renter.js');
 const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
 
+var db = require('./models');
+
+app.use(bodyParser.json());
 // Use controllers 
 
 app.use('/api/renter', renter);
@@ -23,7 +24,9 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000; 
 
-app.listen(PORT, err => {
-    if(err) throw err; 
-    console.log('Server listening on port:', PORT);
+db.sequelize.sync({ force:true }).then (function(){
+    app.listen(PORT, err => {
+        if(err) throw err; 
+        console.log('Server listening on port:', PORT);
+    });
 });

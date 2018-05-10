@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
 
   // USERS TABLE
   // ADD ASSOCIATION FOREIGN KEY TO USERS
-  const Dogs = sequelize.define("dog", {
+  const Dog = sequelize.define("Dog", {
     name: {
       type: Sequelize.STRING
     },
@@ -24,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
       type: Sequelize.STRING
     }
   });
-  return Dogs;
+  return Dog;
 };

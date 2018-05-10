@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
 
   // USERS TABLE
   // ADD VALIDATION
-  const Users = sequelize.define("user", {
+  const User = sequelize.define("User", {
     firstName: {
       type: Sequelize.STRING
     },
@@ -27,5 +27,5 @@ module.exports = function(sequelize, DataTypes) {
       type: Sequelize.STRING
     }
   });
-  return Users;
+  return User;
 };
