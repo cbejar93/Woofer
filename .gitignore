@@ -60,4 +60,4 @@ typings/
 .DS_Store
 
 /woofer_client/node_modules
-/server/node_modules
+/server/node_modules  
