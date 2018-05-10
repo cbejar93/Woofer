@@ -1,9 +1,10 @@
-// REQUIRED DEPENDENCIES
-const Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes) {
+  // REQUIRED DEPENDENCIES
+  const Sequelize = require("sequelize");
 
-// USERS TABLE
-// ADD VALIDATION
-const Users = sequelize.define('user', {
+  // USERS TABLE
+  // ADD VALIDATION
+  const Users = sequelize.define("user", {
     firstName: {
       type: Sequelize.STRING
     },
@@ -11,18 +12,20 @@ const Users = sequelize.define('user', {
       type: Sequelize.STRING
     },
     email: {
-    type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     zip: {
-    type: Sequelize.INTEGER
+      type: Sequelize.INTEGER
     },
     type: {
-    type: Sequelize.INTEGER
+      type: Sequelize.INTEGER
     },
     password: {
-    type: Sequelize.STRING
+      type: Sequelize.STRING
     },
     imgPath: {
-    type: Sequelize.STRING
+      type: Sequelize.STRING
     }
   });
+  return Users;
+};
