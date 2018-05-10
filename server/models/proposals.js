@@ -1,10 +1,12 @@
-module.exports = function(sequelize, DataTypes) {
   // REQUIRED DEPENDENCIES
-  const Sequelize = require("sequelize");
+const Sequelize = require("sequelize");
+
+module.exports = function(sequelize, DataTypes) {
+
 
   // USERS TABLE
   // ADD ASSOCIATION FOREIGN KEY TO DOGS
-  const Proposals = sequelize.define("proposal", {
+  const Proposal = sequelize.define("proposal", {
     dogId: {
       type: Sequelize.INTEGER
     },
@@ -22,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Proposals;
+  return Proposal;
 };

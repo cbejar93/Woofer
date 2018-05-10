@@ -1,14 +1,15 @@
 const express = require('express'); 
 const bodyParser = require('body-parser'); 
-const morgan = require('morgan');
 const app = express();
 
-morgan('tiny');
 //  Import controllers 
 const renter = require('./controllers/renter.js');
 const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
 
+var db = require('./models');
+
+app.use(bodyParser.json());
 // Use controllers 
 
 app.use('/api/renter', renter);
