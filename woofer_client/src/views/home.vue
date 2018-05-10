@@ -1,7 +1,10 @@
 <template>
     <div id="app">
          <navbar1 />
-         <footer1/>
+          <div class"container">
+              <h1>Our Content Goes in Here</h1>
+              <footer1/>
+           </div>
     </div>
 </template>
 
@@ -11,7 +14,7 @@ import navbar1 from "../components/navbar.vue";
 export default {
   name: 'home',
   components: {
-    footer1
+    footer1,
     navbar1
   }
 }
