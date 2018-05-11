@@ -62,7 +62,7 @@
   hr {
     border: none;
     height: 1px;
-    background-color: #FF2EB8;
+    background-color: #0ac6cb;
     margin: -5px;
   }
 
