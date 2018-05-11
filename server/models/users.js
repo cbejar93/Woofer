@@ -24,7 +24,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     zip: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
+      validate: {
+        isInt: true
+      }
     },
     type: {
       type: Sequelize.INTEGER
@@ -36,7 +39,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     imgPath: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      defaultValue: "/../../woofer_client/src/assets/blankImg.png",
+      validate: {
+        notNull: false
+      }
     }
   });
   return User;
