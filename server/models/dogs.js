@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         isInt: true
       }
     },
-    tempermant: {
+    temperament: {
       type: Sequelize.STRING
     },
     breed: {
