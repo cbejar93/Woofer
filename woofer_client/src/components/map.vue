@@ -1,12 +1,16 @@
 <template>
+  <div> 
     <div id="google-map">
-
     </div>
+    <h1>There should be some text showing up</h1>
+  </div>
+
 
 </template>
 
 <script>
-export default {
+  export default {
+    name: "map",
     props: {
       'latitude': {
         type: Number,
@@ -33,21 +37,22 @@ export default {
 
       }
     },
+
     mounted(){
-                  this.map = new google.maps.Map(document.getElementById('google-map'), {
-                center: {lat: this.latitude, lng: this.longitude},
-                zoom: this.zoom
-        }
+      this.map = new google.maps.Map(document.getElementById('google-map'), {
+        center: {lat: this.latitude, lng: this.longitude},
+        zoom: this.zoom
+      });
+    }
   }
 
-var googleMapApikey = "AIzaSyBmaHbGhFQhBByXyw8flgXVTURVHT5iHHc"
 </script>
 
 <style>
 
 #google-map{
     height: 300px;
-    width: 300px;;
+    width: 300px;
 }
 
 </style>
