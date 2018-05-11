@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/views/home'
 import signUp from '@/views/signUp'
+import userHome from '@/views/userHome'
 import proposalRenter from '@/views/proposalRenter'
 import signIn from '@/views/login'
 
@@ -21,6 +22,10 @@ export default new Router({
       component: signUp
     },
     {
+      path: "/dogsviews",
+      name: "resultPage",
+      component: userHome
+    },
       path: '/yourmatches',
       name: 'proprenter',
       component: proposalRenter
