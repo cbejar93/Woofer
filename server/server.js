@@ -6,7 +6,7 @@ const app = express();
 const renter = require('./controllers/renter.js');
 const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
-
+const user = require('./controllers/users.js');
 var db = require('./models');
 
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use('/api/renter', renter);
 app.use('/api/rentee', rentee);
 app.use('/api/props', props);
-
+app.use('/api/user', user )
 
 
 app.get('/', (req, res) => {
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000; 
 
-db.sequelize.sync({ force:true }).then (function(){
+db.sequelize.sync({ force:false }).then (function(){
     app.listen(PORT, err => {
         if(err) throw err; 
         console.log('Server listening on port:', PORT);

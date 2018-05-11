@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     age: {
       type: Sequelize.INTEGER
     },
-    tempermant: {
+    temperament: {
       type: Sequelize.STRING
     },
     breed: {
