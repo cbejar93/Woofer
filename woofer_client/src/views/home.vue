@@ -1,6 +1,7 @@
 <template>
     <div id="app">
          <navbar1 />
+         <div class ="container">
          <footer1/>
     </div>
 </template>
