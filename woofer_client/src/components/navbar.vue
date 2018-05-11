@@ -6,6 +6,7 @@
        <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><router-link class="waves-effect" to="/join">Become a Woofer</router-link></li>
           <li><router-link class="waves-effect" to="/signin">Sign In</router-link></li>
+          <li><router-link class="waves-effect" to="/">Home</router-link></li>
     
         </ul>
      </div>

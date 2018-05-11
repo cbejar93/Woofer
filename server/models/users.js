@@ -8,13 +8,12 @@ module.exports = function(sequelize, DataTypes) {
     firstName: {
       type: Sequelize.STRING,
       validate: {
-        notNull: true
       }
     },
     lastName: {
       type: Sequelize.STRING,
       validate: {
-        notNull: true
+      
       }
     },
     email: {
@@ -35,14 +34,14 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: Sequelize.STRING,
       validate: {
-        len: [1, 5]
+        len: [1]
       }
     },
     imgPath: {
       type: Sequelize.STRING,
       defaultValue: "/../../woofer_client/src/assets/blankImg.png",
       validate: {
-        notNull: false
+    
       }
     }
   });

@@ -28,7 +28,8 @@ router.post('/add_user', (req,res) => {
                 })
                 .then(results => res.json({
                     msg: "success", 
-                    status: 201
+                    status: 201, 
+                    user: results
                 }));
 
             });
@@ -47,6 +48,7 @@ router.post('/login', (req, res) => {
     console.log(req.body, 'asdfs')
     const email = req.body.formData.email;
     const password = req.body.formData.password; 
+    let  data = {}; 
     db.User.findOne({
         where: {
             email: email
@@ -57,9 +59,10 @@ router.post('/login', (req, res) => {
             res.json({
                 msg: "User does not exist",
                 status: 200,
-                state: false
+                state: false,
             })
         }  else {
+            data = result;
             const hashed = result.dataValues.password;
             return bcrypt.compare(password, hashed)
         }
@@ -67,8 +70,10 @@ router.post('/login', (req, res) => {
     .then( bool => res.json({
         msg: "Wait",
         status: 200,
-        state: bool
-    }));
+        state: bool,
+        user: data
+    }))
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

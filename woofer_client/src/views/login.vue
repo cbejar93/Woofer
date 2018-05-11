@@ -26,6 +26,7 @@
         </div>
       </form>
     </div>
+    <h1>{{user}}</h1>
   </div>
 </template>
 
@@ -34,6 +35,11 @@
   
   export default {
     name: "loginForm",
+    props: {
+      user: {
+        required: true
+      }
+    },
     data() {
       return {
         msg: ''
@@ -52,6 +58,7 @@
        const res = await userServices.loginUser(values); 
        console.log(res);
        this.msg = res.data.msg;
+       this.user = res.data.user;
       }
     }
   };
