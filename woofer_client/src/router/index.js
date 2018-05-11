@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/views/home'
 import signUp from '@/views/signUp'
 import proposalRenter from '@/views/proposalRenter'
+import signIn from '@/views/login'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/yourmatches',
       name: 'proprenter',
       component: proposalRenter
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: signIn
     }
 
   ]

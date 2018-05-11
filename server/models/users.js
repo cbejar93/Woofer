@@ -6,25 +6,44 @@ module.exports = function(sequelize, DataTypes) {
   // ADD VALIDATION
   const User = sequelize.define("User", {
     firstName: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        notNull: true
+      }
     },
     lastName: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        notNull: true
+      }
     },
     email: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        isEmail: true
+      }
     },
     zip: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
+      validate: {
+        isInt: true
+      }
     },
     type: {
       type: Sequelize.INTEGER
     },
     password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        len: [1, 5]
+      }
     },
     imgPath: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      defaultValue: "/../../woofer_client/src/assets/blankImg.png",
+      validate: {
+        notNull: false
+      }
     }
   });
   return User;
