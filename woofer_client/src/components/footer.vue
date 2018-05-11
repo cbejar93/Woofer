@@ -1,42 +1,34 @@
 <template>
-       <footer class="page-footer">
-                
-                    <div class="row valign-wrapper">
-                        <div class="col l6 s6">
-                            <img src="../assets/logo_mobile.png"/>
-                        </div>
-                        <div class="col l6 s6">
-                            <p>© 2018 Fourtastic</p>
-                        </div>
-                    </div>
-                  
-        </footer>
+  <footer class="page-footer">
+
+    <img src="../assets/images/logo_sm.png" />
+    <p class="right">Woofer © 2018 Fourtastic</p>
+
+  </footer>
 </template>
 
 <script>
-export default {
-  name: 'footer'
-}
+  export default {
+    name: 'footer'
+  }
+
 </script>
 
 <style scoped>
-footer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-    height: 60px;
-    background-image: linear-gradient(
-    to bottom right,
+  .page-footer {
+    height: 50px;
+    background-image: linear-gradient( to bottom right,
     #FF23B8,
-    #d4108e
-  );
+    #d4108e);
   }
 
-main {
-    flex: 1 0 auto;
+  p {
+    margin: -5px 35px 0 0;
   }
-img{
-    width: 25%;
-}
+
+  img {
+    margin: -10px 20px 0 40px;
+    
+  }
 
 </style>
