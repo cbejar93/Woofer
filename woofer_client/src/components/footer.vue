@@ -2,14 +2,24 @@
   <footer class="page-footer">
 
     <img src="../assets/images/logo_sm.png" />
-    <p class="right">Woofer © 2018 Fourtastic</p>
+    <p class="right">Woofer © {{year}} Fourtastic</p>
 
   </footer>
 </template>
 
 <script>
   export default {
-    name: 'footer'
+    name: 'footer-component',
+    data() {
+     return {
+       year: this.getYear()
+     }
+    },
+    methods: {
+      getYear: function() {
+        return new Date().getFullYear();
+      }
+    }
   }
 
 </script>

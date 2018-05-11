@@ -1,5 +1,6 @@
 const express = require('express'); 
 const bodyParser = require('body-parser'); 
+const cors = require('cors');
 const app = express();
 
 //  Import controllers 
@@ -8,6 +9,9 @@ const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
 const user = require('./controllers/users.js');
 var db = require('./models');
+
+app.use(cors());
+
 
 app.use(bodyParser.json());
 // Use controllers 

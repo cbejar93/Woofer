@@ -2,10 +2,11 @@
 <div class="navbar-fixed">
    <nav>
      <div class="nav-wrapper">
-       <img src="../assets/images/logo_white.png" href="#" class="brand-logo" />
+       <img src="../assets/images/logo_white.png" class="brand-logo" />
        <ul id="nav-mobile" class="right hide-on-med-and-down">
-         <li><a class="waves-effect" href="#">Become a Woofer</a></li>
-         <li><a class="waves-effect" href="#">Sign In</a></li>
+         <li><router-link class="waves-effect" to="/join">Become a Woofer</router-link></li>
+          <li><router-link class="waves-effect" to="/signin">Sign In</router-link></li>
+    
         </ul>
      </div>
     </nav>

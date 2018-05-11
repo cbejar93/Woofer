@@ -3,14 +3,15 @@ const db = require('./../models');
 const bcrypt = require('bcryptjs');
 
 router.post('/add_user', (req,res) => {
-    const firstName = req.body.first_name; 
-    const lastName = req.body.last_name; 
-    const email = req.body.email; 
-    const zip = req.body.zipcode; 
-    const type = req.body.type; 
-    let password = req.body.password;
-    const passwordOne  = req.body.password_one; 
-    const imgUrl = req.body.img_url; 
+    const firstName = req.body.formData.first_name; 
+    const lastName = req.body.formData.last_name; 
+    const email = req.body.formData.email; 
+    const zip = req.body.formData.zipcode; 
+    const type = req.body.formData.type; 
+    let password = req.body.formData.password;
+    const passwordOne  = req.body.formData.password_one; 
+    const imgUrl = req.body.formData.img_url; 
+    console.log(req.body)
     if(password === passwordOne) {
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(password, salt, (err, hash) => {
@@ -25,14 +26,18 @@ router.post('/add_user', (req,res) => {
                     password: password,
                     imgPath: imgUrl 
                 })
-                .then(results => res.send(results));
+                .then(results => res.json({
+                    msg: "success", 
+                    status: 201
+                }));
 
             });
         
         });
     } else {
         res.json({
-            msg: "passwords did not match!"
+            msg: "passwords did not match!",
+            status: 400
         })
     }
 });

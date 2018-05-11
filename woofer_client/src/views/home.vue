@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navbar1 />
+   
 
     <div class="row" id="carousel">
       <agile :arrows="false" :autoPlaySpeed="2500" :timing="'linear'" :fade="true" :autoplay="true" :dots="false" :pauseOnHover="false">
@@ -38,18 +38,15 @@
       </div>
     </div>
 
-    <footer1/>
+
   </div>
 </template>
 
 <script>
-  import footer1 from "../components/footer.vue";
-  import navbar1 from "../components/navbar.vue";
+
   export default {
     name: 'home',
     components: {
-      footer1,
-      navbar1
     }
   }
 
