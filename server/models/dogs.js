@@ -31,6 +31,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     imgPath: {
       type: Sequelize.STRING,
+      defaultValue: "/../../woofer_client/src/assets/images/blankDog.png",
       validate: {
         notNull: false
       }
