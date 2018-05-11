@@ -27,6 +27,7 @@ router.post('/createprop', function(req, res) {
     }).then(results => res.send(results));   
 });
 
+
 // router.put('/updateprop/:state', function(req, res) {
 //     var state = req.params.state;
 //     console.log(state);
