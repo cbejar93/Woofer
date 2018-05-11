@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000; 
 
-db.sequelize.sync({ force:true }).then (function(){
+db.sequelize.sync({ force:false }).then (function(){
     app.listen(PORT, err => {
         if(err) throw err; 
         console.log('Server listening on port:', PORT);
