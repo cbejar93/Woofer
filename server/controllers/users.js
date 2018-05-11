@@ -44,18 +44,31 @@ router.post('/add_user', (req,res) => {
 
 
 router.post('/login', (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password; 
+    console.log(req.body, 'asdfs')
+    const email = req.body.formData.email;
+    const password = req.body.formData.password; 
     db.User.findOne({
         where: {
             email: email
         }
     })
     .then(result => {
-        const hashed = result.dataValues.password;
-        return bcrypt.compare(password, hashed)
+        if(!result){
+            res.json({
+                msg: "User does not exist",
+                status: 200,
+                state: false
+            })
+        }  else {
+            const hashed = result.dataValues.password;
+            return bcrypt.compare(password, hashed)
+        }
     })
-    .then( bool => res.send(bool));
+    .then( bool => res.json({
+        msg: "Wait",
+        status: 200,
+        state: bool
+    }));
 });
 
 module.exports = router;

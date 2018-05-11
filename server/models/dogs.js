@@ -6,23 +6,36 @@ module.exports = function(sequelize, DataTypes) {
   // ADD ASSOCIATION FOREIGN KEY TO USERS
   const Dog = sequelize.define("Dog", {
     name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        notNull: true
+      }
     },
     age: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
+      validate: {
+        isInt: true
+      }
     },
     temperament: {
       type: Sequelize.STRING
     },
     breed: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        notNull: true
+      }
     },
     userId: {
       type: Sequelize.INTEGER
     },
     imgPath: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        notNull: false
+      }
     }
   });
   return Dog;
+  
 };
