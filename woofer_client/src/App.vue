@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <router-view />
   </div>
 </template>
@@ -13,7 +12,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #797979;
