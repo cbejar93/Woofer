@@ -1,13 +1,16 @@
 <template>
-  <nav>
-    <div class="nav-wrapper">
-      <img src="../assets/logo_white.png" href="#" class="brand-logo" />
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Become a Woofer</a></li>
-        <li><a href="#">Sign In</a></li>
-      </ul>
-    </div>
-  </nav>
+<div class="navbar-fixed">
+   <nav>
+     <div class="nav-wrapper">
+       <img src="../assets/images/logo_white.png" class="brand-logo" />
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><router-link class="waves-effect" to="/join">Become a Woofer</router-link></li>
+          <li><router-link class="waves-effect" to="/signin">Sign In</router-link></li>
+    
+        </ul>
+     </div>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -15,18 +18,18 @@ export default {
   name: 'navbar1'
   
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 img {
-    height: 65%;
+    height: 60%;
     margin: 10px 20px 10px 40px;
 }
 
-ul {
+a {
     margin: 0 20px 0 0;
+    font-size: 16px;
 }
 
 .nav-wrapper {
@@ -36,5 +39,4 @@ ul {
     #d4108e
   );
 }
-
 </style>

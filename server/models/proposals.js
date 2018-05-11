@@ -1,26 +1,14 @@
-module.exports = function(sequelize, DataTypes) {
-  // REQUIRED DEPENDENCIES
-  const Sequelize = require("sequelize");
 
+module.exports = function(sequelize, DataTypes) {
   // USERS TABLE
   // ADD ASSOCIATION FOREIGN KEY TO DOGS
-  const Proposals = sequelize.define("proposal", {
-    dogId: {
-      type: Sequelize.INTEGER
-    },
-    renter_id: {
-      type: Sequelize.INTEGER
-    },
-    rentee_id: {
-      type: Sequelize.INTEGER
-    },
-    meetAddress: {
-      type: Sequelize.STRING
-    },
-    state: {
-      type: Sequelize.INTEGER
-    }
+  const Proposal = sequelize.define("Proposal", {
+    dogId: DataTypes.INTEGER,
+    renter_id: DataTypes.INTEGER,
+    rentee_id: DataTypes.INTEGER,
+    meetAddress: DataTypes.STRING,
+    state: DataTypes.INTEGER
   });
 
-  return Proposals;
+  return Proposal;
 };

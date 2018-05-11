@@ -1,36 +1,44 @@
 <template>
-       <footer class="page-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <img src="../assets/logo.png" height="200px" width="300px"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                        © 2018 Fourtastic 
-                    </div>
-                </div>   
-        </footer>
+  <footer class="page-footer">
+
+    <img src="../assets/images/logo_sm.png" />
+    <p class="right">Woofer © {{year}} Fourtastic</p>
+
+  </footer>
 </template>
 
 <script>
-export default {
-  name: 'footer'
-}
+  export default {
+    name: 'footer-component',
+    data() {
+     return {
+       year: this.getYear()
+     }
+    },
+    methods: {
+      getYear: function() {
+        return new Date().getFullYear();
+      }
+    }
+  }
+
 </script>
 
-<style>
-footer {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
+<style scoped>
+  .page-footer {
+    height: 50px;
+    background-image: linear-gradient( to bottom right,
+    #FF23B8,
+    #d4108e);
   }
 
-  main {
-    flex: 1 0 auto;
+  p {
+    margin: -5px 35px 0 0;
   }
+
+  img {
+    margin: -10px 20px 0 40px;
     
+  }
 
 </style>
