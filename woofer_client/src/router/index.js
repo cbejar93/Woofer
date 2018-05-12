@@ -22,7 +22,7 @@ export default new Router({
       component: signUp
     },
     {
-      path: "/dogsviews",
+      path: "/findadog",
       name: "resultPage",
       component: userHome
     },
@@ -30,6 +30,11 @@ export default new Router({
       path: '/signin',
       name: 'signin',
       component: signIn
+    },
+    {
+      path: '/adddog',
+      name: 'adddog',
+      component: addDog
     },
     {
       path: '/adddog',
