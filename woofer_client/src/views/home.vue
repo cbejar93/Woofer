@@ -68,9 +68,6 @@
   }
 
   hr {
-    border: none;
-    height: 1px;
-    background-color: #0ac6cb;
     margin: -5px;
   }
 

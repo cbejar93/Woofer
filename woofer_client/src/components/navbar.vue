@@ -37,7 +37,8 @@ a {
     background-image: linear-gradient(
     to bottom right,
     #FF23B8,
-    #d4108e
+    #d4108e,
+    #B20E7B
   );
 }
 </style>
