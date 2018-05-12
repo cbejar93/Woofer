@@ -11,6 +11,11 @@ router.post('/add_dog', (req,res) => {
     .then(results => res.send(results));
 });
 
+router.get('/dogs', (req, res) => {
+    db.Dog.findAll()
+    .then(results => res.json(results));
+})
+
 
 
 module.exports = router; 
