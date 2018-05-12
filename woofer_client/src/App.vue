@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <main>
-      <navbar1/>
-      <router-view/>
+      <navbar1 :user="user" @interface="user = $event"/>
+      <router-view :user="user" @interface="user = $event"/>
     </main>
     <footer1 class="sticky" />
   </div>
@@ -11,11 +11,27 @@
 <script>
   import navbar1 from "./components/navbar.vue";
   import footer1 from "./components/footer.vue";
+  import localStorages from "@/services/localStorage";
   export default {
     name: 'App',
     components: {
       navbar1,
       footer1
+    },
+    data() {
+      return {
+        user: ""
+      }
+    },
+    methods: {
+      checkUser() {
+        return localStorages.getLocal();
+      
+      }
+    },
+    mounted(){
+      this.user = this.checkUser();
+      console.log(this.user)
     }
   }
 
@@ -37,11 +53,11 @@
     height: 50px;
   }
 
-  .btn {
-    font-family: "Montserrat", sans-serif;
-    text-transform: capitalize;
-    background-color: #10C5CC;
-  }
+.btn {
+  font-family:   Montserrat, sans-serif;
+  text-transform: capitalize;
+  background-color: #10C5CC;
+}
 
   h5 {
     padding: 20px;

@@ -71,6 +71,7 @@
        const res = await userServices.addUser(values); 
 
        this.msg = res.data.msg;
+       this.$router.push({ path: `/signin` });
       }
     }
   };
