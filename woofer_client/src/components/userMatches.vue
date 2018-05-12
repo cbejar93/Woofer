@@ -11,6 +11,7 @@
         <h6>Name:
           <span id="matchName">Melo</span>
         </h6>
+        <h6>Breed: <span id="breed">Pitbull Boxer Mix</span></h6>
         <h6>Gender: <span id="gender">Male</span></h6>
         <h6>Age: <span id="age">4 years old</span></h6>
         <h6>Temperment:
