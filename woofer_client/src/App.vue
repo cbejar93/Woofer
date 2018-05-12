@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main>
-      <navbar1/>
+      <navbar1 :user="user"/>
       <router-view/>
     </main>
     <footer1 class="sticky" />
@@ -11,11 +11,27 @@
 <script>
   import navbar1 from "./components/navbar.vue";
   import footer1 from "./components/footer.vue";
+  import localStorages from "@/services/localStorage";
   export default {
     name: 'App',
     components: {
       navbar1,
       footer1
+    },
+    data() {
+      return {
+        user: ""
+      }
+    },
+    methods: {
+      checkUser() {
+        return localStorages.getLocal();
+      
+      }
+    },
+    created(){
+      this.user = this.checkUser();
+      console.log(this.user)
     }
   }
 </script>
@@ -27,11 +43,12 @@
     -moz-osx-font-smoothing: grayscale;
     color: #797979;
   }
-main {
-  min-height: calc(100vh - 70px);
-}
-
-.sticky {
-  height: 50px;
-}
+  
+  main {
+    min-height: calc(100vh - 70px);
+  }
+  
+  .sticky {
+    height: 50px;
+  }
 </style>

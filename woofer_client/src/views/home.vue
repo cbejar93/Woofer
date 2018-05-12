@@ -52,10 +52,6 @@
       getData(data) {
         return localStorage.getLocal();
       }
-    },
-    created() {
-      let x = this.getData();
-      console.log(x, 'asd');
     }
   }
 

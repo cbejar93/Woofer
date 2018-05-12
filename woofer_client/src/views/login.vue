@@ -1,11 +1,8 @@
 <template>
   <div class="sign-up-form">
+  
 
-    <div v-if="msg" class="alert">
-      <div class="card"><h2>{{msg}}</h2></div>
-    </div>
-
-    <div v-else="msg" class="row">
+    <div class="row">
       <h2 class="title">Welcome Back</h2>
       <form id="addUser" class="col s12 card">
         <div class="row">
@@ -31,12 +28,13 @@
 
 <script>
   import userServices from "@/services/userServices";
-  
+  import localStorages from "@/services/localStorage";
   export default {
     name: "loginForm",
     data() {
       return {
-        msg: ''
+        msg: '',
+        user: {}
       }
     },
     methods: {
@@ -52,8 +50,17 @@
        const res = await userServices.loginUser(values); 
        console.log(res);
        this.msg = res.data.msg;
-       this.user = res.data.user;
+       this.setSession(res.data.user);
+       this.$router.push({ path: `/` });
+      }, 
+      setSession(data){
+        this.user = localStorages.setLocal(data);
+        console.log(this.user)
+
       }
+
+
+
     }
   };
 </script>
