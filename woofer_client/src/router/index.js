@@ -5,6 +5,7 @@ import signUp from '@/views/signUp'
 import userHome from '@/views/userHome'
 import proposalRenter from '@/views/proposalRenter'
 import signIn from '@/views/login'
+import addDog from '@/views/addDog'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/signin',
       name: 'signin',
       component: signIn
+    },
+    {
+      path: '/adddog',
+      name: 'adddog',
+      component: addDog
     }
 
   ]
