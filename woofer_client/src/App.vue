@@ -43,6 +43,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #797979;
   }
+<<<<<<< HEAD
   
   main {
     min-height: calc(100vh - 70px);
@@ -50,5 +51,29 @@
   
   .sticky {
     height: 50px;
+=======
+main {
+  min-height: calc(100vh - 70px);
+}
+
+.sticky {
+  height: 50px;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  background-color: #10C5CC;
+}
+
+h5 {
+    padding: 20px;
+    color: #b20e7b;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+>>>>>>> ba2b5298a589768614276206e629df9a23d6c039
   }
 </style>

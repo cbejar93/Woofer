@@ -2,7 +2,6 @@
   <div> 
     <div id="google-map">
     </div>
-    <h1>There should be some text showing up</h1>
   </div>
 
 
