@@ -34,4 +34,20 @@ main {
 .sticky {
   height: 50px;
 }
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  background-color: #10C5CC;
+}
+
+h5 {
+    padding: 20px;
+    color: #b20e7b;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 </style>
