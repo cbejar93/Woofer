@@ -60,9 +60,16 @@ import localStorages from "@/services/localStorage";
   a {
     margin: 0 20px 0 0;
     font-size: 16px;
-  }
-  
-  .nav-wrapper {
-    background-image: linear-gradient( to bottom right, #FF23B8, #d4108e);
-  }
+
+}
+
+.nav-wrapper {
+    background-image: linear-gradient(
+    to bottom right,
+    #FF23B8,
+    #d4108e,
+    #B20E7B
+  );
+}
+
 </style>

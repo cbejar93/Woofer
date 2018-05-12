@@ -34,6 +34,7 @@
       console.log(this.user)
     }
   }
+
 </script>
 
 <style>
@@ -43,13 +44,14 @@
     -moz-osx-font-smoothing: grayscale;
     color: #797979;
   }
-main {
-  min-height: calc(100vh - 70px);
-}
 
-.sticky {
-  height: 50px;
-}
+  main {
+    min-height: calc(100vh - 70px);
+  }
+
+  .sticky {
+    height: 50px;
+  }
 
 .btn {
   font-family:   Montserrat, sans-serif;
@@ -57,7 +59,7 @@ main {
   background-color: #10C5CC;
 }
 
-h5 {
+  h5 {
     padding: 20px;
     color: #b20e7b;
   }
@@ -66,4 +68,11 @@ h5 {
     font-size: 16px;
     line-height: 1.6;
   }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #0ac6cb;
+  }
+
 </style>
