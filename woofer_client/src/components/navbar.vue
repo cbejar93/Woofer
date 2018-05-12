@@ -16,7 +16,7 @@
         </ul>
         <ul v-else id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <router-link class="waves-effect" to="/">View Dogs</router-link>
+            <router-link class="waves-effect" to="/dogsviews">View Dogs</router-link>
           </li>
           <li>
             <a class="waves-effect" v-on:click="logOut">Sign Out</a>
@@ -39,7 +39,9 @@ import localStorages from "@/services/localStorage";
     methods: {
       logOut(){
         localStorages.deleteLocal();
-        this.user= "";
+
+        this.$emit('interface', localStorages.getLocal())
+        this.$router.push({ path: `/` });
       }
     },
     created(){

@@ -31,10 +31,11 @@
   import localStorages from "@/services/localStorage";
   export default {
     name: "loginForm",
+    props: ['user'],
     data() {
       return {
         msg: '',
-        user: {}
+       // user: {}
       }
     },
     methods: {
@@ -51,10 +52,11 @@
        console.log(res);
        this.msg = res.data.msg;
        this.setSession(res.data.user);
-       this.$router.push({ path: `/` });
+       this.$router.push({ path: `/dogsviews` });
       }, 
       setSession(data){
-        this.user = localStorages.setLocal(data);
+        this.$emit('interface', localStorages.setLocal(data))
+
         console.log(this.user)
 
       }
