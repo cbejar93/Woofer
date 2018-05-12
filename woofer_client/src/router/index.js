@@ -26,6 +26,7 @@ export default new Router({
       name: "resultPage",
       component: userHome
     },
+    {
       path: '/yourmatches',
       name: 'proprenter',
       component: proposalRenter

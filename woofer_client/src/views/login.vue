@@ -26,7 +26,6 @@
         </div>
       </form>
     </div>
-    <h1>{{user}}</h1>
   </div>
 </template>
 
@@ -35,11 +34,6 @@
   
   export default {
     name: "loginForm",
-    props: {
-      user: {
-        required: true
-      }
-    },
     data() {
       return {
         msg: ''

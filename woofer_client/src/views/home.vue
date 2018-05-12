@@ -1,7 +1,6 @@
 <template>
 
   <div id="app">
-    <h1>{{user.german}}</h1>
 
     <div class="row" id="carousel">
       <agile :arrows="false" :autoPlaySpeed="2500" :timing="'linear'" :fade="true" :autoplay="true" :dots="false" :pauseOnHover="false">
@@ -44,15 +43,19 @@
 </template>
 
 <script>
-
+  import localStorage from "@/services/localStorage.js";
   export default {
     name: 'home',
     components: {
     },
-    props: {
-      user: {
-        required: true
+    methods: {
+      getData(data) {
+        return localStorage.getLocal();
       }
+    },
+    created() {
+      let x = this.getData();
+      console.log(x, 'asd');
     }
   }
 

@@ -2,7 +2,7 @@
   <div id="app">
     <main>
       <navbar1/>
-      <router-view v-bind:user="user" />
+      <router-view/>
     </main>
     <footer1 class="sticky" />
   </div>
