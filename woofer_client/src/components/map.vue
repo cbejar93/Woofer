@@ -51,7 +51,7 @@
 
 #google-map{
     height: 300px;
-    width: 300px;
+    width: 600px;
 }
 
 </style>
