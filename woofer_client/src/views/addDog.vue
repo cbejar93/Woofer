@@ -26,8 +26,8 @@
                             <label for="gender">Gender</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="tempermant" type="text" class="validate">
-                            <label for="tempermant">Tempermant</label>
+                            <input id="character" type="text" class="validate">
+                            <label for="character">Character</label>
                         </div>
                     </div>
                     <div class="row">

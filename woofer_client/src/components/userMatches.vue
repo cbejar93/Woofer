@@ -14,8 +14,8 @@
         <h6>Breed: <span id="breed">Pitbull Boxer Mix</span></h6>
         <h6>Gender: <span id="gender">Male</span></h6>
         <h6>Age: <span id="age">4 years old</span></h6>
-        <h6>Temperment:
-          <span id="tempDesc">Beefy Snuggler</span>
+        <h6>Character:
+          <span id="charDesc">Beefy Snuggler</span>
         </h6>
         <p id="matchDesc">Melo loves going for walks and meeting other dogs. He’s also perfectly content laying his head in your lap. Melo
           takes treats gently and gives the best hugs.</p>
