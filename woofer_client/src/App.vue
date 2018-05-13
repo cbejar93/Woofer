@@ -59,8 +59,8 @@
   background-color: #10C5CC;
 }
 
-  h5 {
-    padding: 20px;
+  h5, h6 {
+    padding: 20px 0;
     color: #b20e7b;
   }
 

@@ -64,7 +64,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     button {
         float: right;
         margin: 1em;
