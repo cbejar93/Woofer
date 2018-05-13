@@ -5,6 +5,7 @@ import signUp from '@/views/signUp'
 import userHome from '@/views/userHome'
 import signIn from '@/views/login'
 import addDog from '@/views/addDog'
+import shareHome from '@/views/shareHome'
 
 Vue.use(Router)
 
@@ -37,9 +38,9 @@ export default new Router({
       component: addDog
     },
     {
-      path: '/adddog',
-      name: 'adddog',
-      component: addDog
+      path: '/shareprofile',
+      name: 'shareprofile',
+      component: shareHome
     }
 
   ]
