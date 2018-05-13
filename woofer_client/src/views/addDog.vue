@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <div class="container">
-            <h5>Add your Woofer</h5>
+            <h2 id="title">Add your Woofer</h2>
             <div class="row">
-                <form class="col s12">
+                <form id="addDog" class="col s12 card">
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="dog_name" type="text" class="validate">
@@ -65,5 +65,17 @@
 </script>
 
 <style>
+    button {
+        float: right;
+        margin: 1em;
+    }
+
+    #title {
+        text-align: center;
+    }
+
+    .card {
+        padding: 2em;
+    }
 
 </style>
