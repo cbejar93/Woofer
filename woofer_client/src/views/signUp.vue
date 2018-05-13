@@ -40,7 +40,6 @@
             <label for="password1">Verify Password</label>
           </div>
           <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
-              <i class="material-icons right">send</i>
             </button>
   
         </div>
@@ -72,6 +71,7 @@
        const res = await userServices.addUser(values); 
 
        this.msg = res.data.msg;
+       this.$router.push({ path: `/signin` });
       }
     }
   };
