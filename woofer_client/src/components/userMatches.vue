@@ -21,7 +21,7 @@
         </h6>
         <p id="matchDesc">{{dog.description}}</p>
         
-        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="btnClicked" >Meet This Woofer</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="modalbtn" href="#modal1" v-on:click="btnClicked" >Meet This Woofer</button>
       </div>
     </div>
 
