@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Promise = require('bluebird')
 const db = require('./../models');
 
 router.get("/threads/:userId", function (req, res){
@@ -10,17 +11,16 @@ router.get("/threads/:userId", function (req, res){
 })
 
 router.post("/threads", function(req,res){
-    console.log("HELLO! " + JSON.stringify(req.body));
     db.Thread.create(req.body).then(function(dbThread){
-        console.log("Thread! " + dbThread);
-        // Promise.join(
-        //     db.UserThread.create({ThreadId: dbThread.id, UserId: req.body.senderId}),
-        //     db.UserThread.create({ThreadId: dbThread.id, UserId: req.body.recipientId}),
-        //     db.Message.create({content: req.body.content, ThreadId: dbThread.id})
-        // ).then(function() {
-        //     res.send({threadId: dbThread.id});
-        // })
-    })
-})
+        Promise.join(
+             db.UserThread.create({ThreadId: dbThread.id, UserId: req.body.senderId}),
+             db.UserThread.create({ThreadId: dbThread.id, UserId: req.body.recipientId}),
+             db.Message.create({content: req.body.content, ThreadId: dbThread.id})
+         ).then(function() {
+           console.log("BLAH");
+             res.json({threadId: dbThread.id});
+         });
+    });
+});
 
 module.exports = router;

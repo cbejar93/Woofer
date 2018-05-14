@@ -6,10 +6,7 @@ module.exports = function(sequelize, DataTypes) {
   // ADD ASSOCIATION FOREIGN KEY TO USERS
   const Thread = sequelize.define("Thread", {
     subject: {
-      type: Sequelize.STRING,
-      validate: {
-        notNull: true
-      }
+      type: Sequelize.STRING
     },
   });
 
