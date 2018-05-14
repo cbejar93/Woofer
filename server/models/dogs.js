@@ -20,6 +20,9 @@ module.exports = function(sequelize, DataTypes) {
     temperament: {
       type: Sequelize.STRING
     },
+    description: {
+      type: Sequelize.STRING
+    },
     breed: {
       type: Sequelize.STRING,
       validate: {

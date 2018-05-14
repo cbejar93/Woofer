@@ -6,33 +6,33 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="dog_name" type="text" class="validate">
+                            <input id="dog_name" type="text" class="validate" name="name">
                             <label for="dog_name">Dog Name</label>
                         </div>   
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="dog_breed" type="text" class="validate">
+                            <input id="dog_breed" type="text" class="validate" name="breed">
                             <label for="dog_breed">Breed</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="dog_age" type="number" class="validate">
+                            <input id="dog_age" type="number" class="validate" name="age">
                             <label for="dog_age">Age</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="gender" type="text" class="validate">
+                            <input id="gender" type="text" class="validate" name="gender">
                             <label for="gender">Gender</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="tempermant" type="text" class="validate">
-                            <label for="tempermant">Tempermant</label>
+                            <input id="tempermant" type="text" class="validate" name="temperament">
+                            <label for="tempermant">Temperament</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
                             <label for="textarea1">Enter a description about your Dog</label>
                         </div>
                     </div>
