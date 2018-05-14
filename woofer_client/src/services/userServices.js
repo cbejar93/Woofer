@@ -9,5 +9,8 @@ export default {
     },
     addDog (formData){
         return Api().post('rentee/add_dog', {formData});
+    },
+    getDogsWoofee (id) {
+        return Api().get(`rentee/dogs/${id}`)
     }
 }

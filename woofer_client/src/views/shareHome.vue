@@ -13,11 +13,7 @@
       
       <div class="row">
         <h6>Woofers You Share</h6>
-
-        <a href="#">
-          <img src="../assets/images/profile_sasha.jpg" id="dogImg" />
-        </a>
-        <p id="dogName">Sasha</p>
+          <woofeeDog v-for="dog in dogs" :dog="dog"/>
       </div>
 
       <hr>
@@ -58,12 +54,31 @@
 
 <script>
   import shareProposal from "../components/shareProposal";
-
+  import userServices from  "@/services/userServices";
+  import woofeeDog  from "../components/woofeeDogProfile";
   export default {
     name: "shareHome",
     components: {
-      shareProposal
+      shareProposal,
+      woofeeDog
+    },
+    props: ['user'],
+    data() {
+      return {
+        dogs: ''
+      }
+    },
+    methods: {
+      async getDogs() {
+        const res = await userServices.getDogsWoofee(this.user.id);
+        this.dogs = res.data;
+      }
+    },
+    created() {
+      this.getDogs();
     }
+
+    
   };
 
 </script>
@@ -85,6 +100,7 @@
 
   #dogImg {
     margin: 5px 0;
+    max-width: 200px;
   }
 
   #addDogBtn {
