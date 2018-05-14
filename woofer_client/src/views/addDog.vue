@@ -8,6 +8,7 @@
         <small>* All fields required</small>
       <div class="row">
 
+
         <form id="addDog" class="col s12 card" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s12">
@@ -113,6 +114,10 @@
   .sign-up-form {
     width: 90%;
     margin: 1em auto;
+  }
+
+  #addDog {
+    border: 1px solid #10C5CC;
   }
 
   button {

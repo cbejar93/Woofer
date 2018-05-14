@@ -33,11 +33,38 @@
 
       <div class="row" id="intro-content">
         <h5>What's a Woofer?</h5>
-        <p>Woofer is a dog sharing service offering the joy and companionship of a furry best friend whenever you need it. Do
-          you want a dog but you're not sure if your lifestyle is compatible with having a dog? Looking for a running partner
-          of the four-legged kind? Want some naptime snuggles with a little furry friend? Then Woofer is for you! We help
-          match people with a temporary canine companion. All Woofer companions are fully vetted and chipped... that goes
-          for you too, just maybe not the chipped part.</p>
+        <p>Woofer is a dog sharing service offering the joy and companionship of a temporary furry best friend whenever you
+          need it. All Woofer companions are fully vetted and chipped... that goes for you too, just maybe not the chipped
+          part.
+        </p>
+      </div>
+    </div>
+
+    <hr style="margin: 0">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col m4">
+          <i class="medium material-icons sectionIcon">pets</i>
+          <p>Just a couple of clicks and you can schedule time with one of our Woofer dogs. Or, if you have a dog who loves
+            meeting new people, become a Woofer partner and get your dog some extra playtime!</p>
+        </div>
+
+        <div class="col m4">
+          <i class="medium material-icons sectionIcon">check_circle_outline</i>
+          <p>Our Woofer dogs, their people, and those looking to schedule time with a dog are fully vetted. Woofer dogs are
+            microchipped and tracked by GPS.</p>
+        </div>
+
+        <div class="col m4">
+          <i class="medium material-icons sectionIcon">favorite</i>
+          <p>Did you know? Playing with or petting a dog can help reduce stress and keep your heart healthy. Read more about
+            it
+            <a href="https://www.health.harvard.edu/blog/therapy-dog-offers-stress-relief-at-work-201107223111">here.</a>
+          </p>
+        </div>
+
       </div>
     </div>
 
@@ -65,7 +92,7 @@
   }
 
   hr {
-    margin: -5px;
+    margin: -5px 0;
   }
 
   h5 {
@@ -83,6 +110,25 @@
 
   #dogPanelImg {
     margin: 20px 0 0 0;
+  }
+
+  .sectionIcon {
+    color: #FFE447;
+    display: block;
+    margin: 40px auto;
+    max-width: 75px;
+  }
+
+  a:visited {
+    color: rgb(14, 153, 158);
+  }
+
+  a:hover {
+    color: rgb(27, 228, 235);
+  }
+
+  a:active {
+    color: #10C5CC;
   }
 
 </style>

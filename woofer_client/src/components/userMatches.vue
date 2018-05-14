@@ -5,6 +5,7 @@
 
     <div class="row" id="matchPanel">
       <div class="col s2" id="dogImg">
+
         <img :src="dog.imgPath" id="matchImg" alt="Woofer Match" />
       </div>
 

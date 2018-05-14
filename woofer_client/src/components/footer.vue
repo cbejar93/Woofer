@@ -36,6 +36,7 @@
   }
 
   p {
+    font-size: 12px;
     margin: -5px 35px 0 0;
   }
 

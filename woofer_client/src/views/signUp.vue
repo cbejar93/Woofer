@@ -13,7 +13,7 @@
         <h5 class="title">Want to spend some quality time with dogs in your area?<br>Or do you have a loveable dog to share?
           Join Woofer!</h5>
         <small>* All fields required</small>
-        <form id="addUser" class="col s12 card">
+        <form id="addUser" class="col s12 card z-depth-0">
           <div class="row">
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
@@ -35,9 +35,9 @@
             <div class="input-field col s6">
               <i class="material-icons prefix">pets</i>
               <select class="validate" name="user_type" id="user_type">
-                <option class="disabled">Are you a Woofer? Or a Woofee?</option>
+                <option class="disabled">Are you a Woofer? Or a Partner?</option>
                 <option value="0">Woofer (find a dog)</option>
-                <option value="1">Woofee (share your dog)</option>
+                <option value="1">Partner (share your dog)</option>
               </select>
             </div>
 
@@ -114,6 +114,10 @@
   .sign-up-form {
     width: 90%;
     margin: 1em auto;
+  }
+
+  #addUser {
+    border: 1px solid #10C5CC;
   }
 
   .alert {

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <h5 class="title">Welcome back to Woofer!</h5>
-        <form id="addUser" class="col s12 card">
+        <form id="addUser" class="col s12 card z-depth-0">
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">email</i>
@@ -77,6 +77,10 @@
     width: 100%;
     height: 100%;
     text-align: center;
+  }
+
+  #addUser {
+    border: 1px solid #10C5CC;
   }
 
   .card {
