@@ -9,7 +9,8 @@
         </div>
       </div>
       <br>
-      <userMatches v-for="dog in dogs" :dog="dog"/>
+
+      <userMatches v-for="dog in dogs" :dog="dog" v-on:interface="foo"/>
 
     </div>
 
@@ -19,7 +20,6 @@
 import googleMap from "../components/map";
 import userMatches from "../components/userMatches";
 import userServices from  "@/services/userServices";
-
 export default {
   name: "userHome",
   components: {
@@ -37,20 +37,19 @@ export default {
       this.dogs = res.data;
       
     },
-    clicked: function(id) {
-			console.log('The button has been clicked', id)
+    foo(name){
+      console.log(name)
+    }
   },
   created() {
     this.getDogs();
- 
-}
+  }
+};
 </script>
 
 <style>
-
 h5 {
   margin: 20px 0;
   padding: 20px 0;
 }
-
 </style>

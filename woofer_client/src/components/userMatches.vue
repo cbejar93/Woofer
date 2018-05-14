@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
 
     <hr>
    
@@ -21,7 +21,7 @@
         <p id="matchDesc">Melo loves going for walks and meeting other dogs. He’s also perfectly content laying his head in your lap. Melo
           takes treats gently and gives the best hugs.</p>
         
-        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="emit">Meet This Woofer</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="btnClicked" >Meet This Woofer</button>
       </div>
     </div>
 
@@ -30,12 +30,11 @@
 
 <script>
 import userServices from  "@/services/userServices";
-
 export default {
   
   name: "userMatches",
   components: {
-  
+  },
   props: ['dog'],
   data() {
     return {
@@ -48,17 +47,17 @@ export default {
       const bar = new Date().getFullYear();
       this.years = bar - foo;
     },
-    {
-        onClickButton (event) {
-      this.$emit('clicked', 'true')
+    btnClicked(){
+      this.$emit('interface', 'Carlos!')
     }
+    
   },
   created() {
     this.calcYear();
-    }
-
+  }
 };
 </script>
+
 
 <style scoped>
 
