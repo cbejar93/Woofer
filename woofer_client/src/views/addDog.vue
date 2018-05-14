@@ -8,7 +8,7 @@
         <small>* All fields required</small>
       <div class="row">
         <form id="addDog" class="col s12 card">
-          <div class="row">
+          <!-- <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">pets</i>
               <input id="dog_name" type="text" class="validate" name="name">
@@ -44,18 +44,18 @@
               <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
               <label for="textarea1">Please enter a short description about your dog</label>
             </div>
-          </div>
-          <!-- <div class="row">
+          </div> -->
+          <div class="row">
             <div class="file-field input-field col s12">
               <div class="btn btn-small">
                 <span>Add image</span>
                 <input type="file">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" placeholder="Upload an image of your dog" type="text">
+                <input class="file-path validate" placeholder="Upload an image of your dog" type="text" name="imgPath">
               </div>
             </div>
-          </div> -->
+          </div>
           <div class="row">
             <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
             </button>
