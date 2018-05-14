@@ -5,6 +5,9 @@ export default {
         return Api().post('user/add_user', {formData});
       },
     loginUser(formData){
-        return Api().post('user/login', {formData})
+        return Api().post('user/login', {formData});
+    },
+    addDog (formData){
+        return Api().post('rentee/add_dog', {formData});
     }
 }

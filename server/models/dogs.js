@@ -7,17 +7,13 @@ module.exports = function(sequelize, DataTypes) {
   const Dog = sequelize.define("Dog", {
     name: {
       type: Sequelize.STRING,
-      validate: {
-        notNull: true
-      }
+      allowNull: false
     },
     age: {
-      type: Sequelize.INTEGER,
-      validate: {
-        isInt: true
-      }
+      type: Sequelize.DATE, 
+      allowNull: false
     },
-    temperament: {
+    character: {
       type: Sequelize.STRING
     },
     description: {
@@ -25,9 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     breed: {
       type: Sequelize.STRING,
-      validate: {
-        notNull: true
-      }
+      allowNull: false
     },
     userId: {
       type: Sequelize.INTEGER
@@ -35,9 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     imgPath: {
       type: Sequelize.STRING,
       defaultValue: "/../../woofer_client/src/assets/images/blankDog.png",
-      validate: {
-        notNull: false
-      }
+      allowNull: false
     }
   });
   return Dog;
