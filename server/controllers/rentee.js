@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const db = require('./../models');
-
-
+const picture = require('./pictures.js');
+const multer = require('multer');
 
 // Route to add a dog 
 
@@ -22,8 +22,7 @@ router.get('/dogs/:id', (req, res) => {
         }
     })
     .then(results => res.json(results));
-})
-
+});
 
 
 module.exports = router; 
