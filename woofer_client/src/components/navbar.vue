@@ -33,6 +33,9 @@
             <router-link class="waves-effect" to="/dogsviews">Home</router-link>
           </li>
           <li>
+            <router-link class="waves-effect" to="/wooferhome">Profile</router-link>
+          </li>
+          <li>
             <a class="waves-effect" v-on:click="logOut">Sign Out</a>
           </li>
         </ul>

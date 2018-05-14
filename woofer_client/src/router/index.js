@@ -6,6 +6,7 @@ import userHome from '@/views/userHome'
 import signIn from '@/views/login'
 import addDog from '@/views/addDog'
 import shareHome from '@/views/shareHome'
+import wooferprofile from '@/views/wooferprofile'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/shareprofile',
       name: 'shareprofile',
       component: shareHome
+    },
+    {
+      path: '/wooferhome',
+      name: 'wooferhome',
+      component: wooferprofile
     }
 
   ]

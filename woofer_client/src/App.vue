@@ -27,6 +27,7 @@ export default {
     checkUser() {
       return localStorages.getLocal();
     }
+    
   },
   mounted() {
     this.user = this.checkUser();

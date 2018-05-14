@@ -21,7 +21,7 @@
         <p id="matchDesc">Melo loves going for walks and meeting other dogs. He’s also perfectly content laying his head in your lap. Melo
           takes treats gently and gives the best hugs.</p>
         
-        <button class="btn waves-effect waves-light" type="submit" name="action">Meet This Woofer</button>
+        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="emit">Meet This Woofer</button>
       </div>
     </div>
 
@@ -33,6 +33,12 @@ export default {
   name: "userMatches",
   components: {
 
+  },
+  
+  methods: {
+    onClickButton (event) {
+      this.$emit('clicked', 'true')
+    }
   }
 };
 </script>
