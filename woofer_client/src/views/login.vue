@@ -56,8 +56,9 @@
         console.log(res);
         this.msg = res.data.msg;
         this.setSession(res.data.user);
+        const url = (res.data.user.type === 0)? '/dogsviews': '/shareprofile'
         this.$router.push({
-          path: `/dogsviews`
+          path: url
         });
       },
       setSession(data) {
