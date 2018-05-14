@@ -7,8 +7,10 @@
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
       <div class="row">
-        <form id="addDog" class="col s12 card z-depth-0">
-          <!-- <div class="row">
+
+
+        <form id="addDog" class="col s12 card" enctype="multipart/form-data">
+          <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">pets</i>
               <input id="dog_name" type="text" class="validate" name="name">
@@ -29,7 +31,7 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="gender" type="text" class="validate" name="dog_gender">
+              <input id="gender" type="text" class="validate" name="gender">
               <label for="gender">Gender</label>
             </div>
             <div class="input-field col s6">
@@ -45,6 +47,7 @@
               <label for="textarea1">Please enter a short description about your dog</label>
             </div>
           </div> -->
+
           <div class="row">
             <div class="file-field input-field col s12">
               <div class="btn btn-small">
