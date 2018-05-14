@@ -62,8 +62,10 @@
           </div>
         </form>
       </div>
-
     </div>
+
+<img src="../assets/images/lg_dogImg03.jpg" id="pageDogImg" alt="add dog image" /> 
+
   </div>
 
 </template>
@@ -127,6 +129,11 @@
 
   #inputFileBtn {
     margin: 0 0 10px 0;
+  }
+
+  #pageDogImg {
+    display: block;
+    margin: 0 auto;
   }
 
 </style>
