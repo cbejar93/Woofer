@@ -10,13 +10,13 @@
 
       <div class="col s9 push-s1" id="dogDesc">
         <h6>Name:
-          <span id="matchName">Melo</span>
+          <span id="matchName">{{dog.name}}</span>
         </h6>
-        <h6>Breed: <span id="breed">Pitbull Boxer Mix</span></h6>
-        <h6>Gender: <span id="gender">Male</span></h6>
-        <h6>Age: <span id="age">4 years old</span></h6>
+        <h6>Breed: <span id="breed">{{dog.breed}}</span></h6>
+        <h6>Gender: <span id="gender">Gender</span></h6>
+        <h6>Age: <span id="age">{{years}}</span></h6>
         <h6>Character:
-          <span id="charDesc">Beefy Snuggler</span>
+          <span id="charDesc">{{dog.character}}</span>
         </h6>
         <p id="matchDesc">Melo loves going for walks and meeting other dogs. He’s also perfectly content laying his head in your lap. Melo
           takes treats gently and gives the best hugs.</p>
@@ -29,11 +29,30 @@
 </template>
 
 <script>
+import userServices from  "@/services/userServices";
+
 export default {
+  
   name: "userMatches",
   components: {
-
+  },
+  props: ['dog'],
+  data() {
+    return {
+      years: ''
+    }
+  },
+  methods: {
+    calcYear() {
+      const foo = new Date(this.dog.age).getFullYear();
+      const bar = new Date().getFullYear();
+      this.years = bar - foo;
+    }
+  },
+  created() {
+    this.calcYear();
   }
+
 };
 </script>
 
