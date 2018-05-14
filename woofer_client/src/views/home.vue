@@ -29,15 +29,17 @@
       <hr>
     </div>
 
+    <div class="container">
 
-
-    <div class="row" id="intro-content">
-      <h5>What's Woofer?</h5>
-      <div class="col s8 offset-s2">
-        <p>Do you want a dog but you're not sure if your lifestyle is compatible with having a dog? Looking for a running partner of the four-legged kind? Want some naptime snuggles with a little furry friend? Then Woofer is for you! We help match people with a temporary canine companion. All Woofer companions are fully vetted and chipped... that goes for you too, just maybe not the chipped part.</p>
+      <div class="row" id="intro-content">
+        <h5>What's a Woofer?</h5>
+        <p>Woofer is a dog sharing service offering the joy and companionship of a furry best friend whenever you need it. Do
+          you want a dog but you're not sure if your lifestyle is compatible with having a dog? Looking for a running partner
+          of the four-legged kind? Want some naptime snuggles with a little furry friend? Then Woofer is for you! We help
+          match people with a temporary canine companion. All Woofer companions are fully vetted and chipped... that goes
+          for you too, just maybe not the chipped part.</p>
       </div>
     </div>
-
 
   </div>
 </template>
@@ -45,15 +47,14 @@
 <script>
   import localStorage from "@/services/localStorage.js";
   export default {
-    name: 'home',
-    components: {
-    },
+    name: "home",
+    components: {},
     methods: {
       getData(data) {
         return localStorage.getLocal();
       }
     }
-  }
+  };
 
 </script>
 
@@ -68,14 +69,20 @@
   }
 
   h5 {
-    text-align: center;
-    padding: 20px;
-    color: #B20E7B;
+    padding: 20px 0;
   }
 
   p {
     font-size: 16px;
     line-height: 1.6;
+  }
+
+  #shelterInfoPanel {
+    margin: 0 0 -5px 0;
+  }
+
+  #dogPanelImg {
+    margin: 20px 0 0 0;
   }
 
 </style>
