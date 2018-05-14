@@ -74,6 +74,11 @@
     padding: 0;
   }
 
+  h5 {
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+
   h6 {
     padding: 5px 0;
   }

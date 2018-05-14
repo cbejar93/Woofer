@@ -3,8 +3,8 @@ const Promise = require('bluebird')
 const db = require('./../models');
 
 router.get("/threads/:userId", function (req, res){
-    db.Thread.findAll({
-        where: { userId: req.params.userId}
+    db.Thread.find({
+        userId: req.params.userId
     }).then(function(dbThreads){
         res.json(dbThreads);
     })
