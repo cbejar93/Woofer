@@ -14,8 +14,13 @@ router.post('/add_dog', (req,res) => {
 });
 
 // where user_id = id
-router.get('/dogs', (req, res) => {
-    db.Dog.findAll()
+router.get('/dogs/:id', (req, res) => {
+    console.log(req.params.id)
+    db.Dog.findAll({
+        where: {
+            userId: req.params.id
+        }
+    })
     .then(results => res.json(results));
 })
 
