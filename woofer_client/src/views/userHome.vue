@@ -3,7 +3,7 @@
     <div class="container">
       <h5>Your Companion Matches</h5>
 
-      <div class="row" id="googMap">
+      <div class="row" id="google-map">
         <div class="col 8 push-s2">
           <google-map></google-map>
         </div>
@@ -36,12 +36,14 @@ export default {
       const res = await userServices.getDogsLocal();
       this.dogs = res.data;
       
-    }
+    },
+    clicked: function(id) {
+			console.log('The button has been clicked', id)
   },
   created() {
     this.getDogs();
-  }
-};
+ 
+}
 </script>
 
 <style>
