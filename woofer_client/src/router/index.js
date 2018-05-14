@@ -23,7 +23,7 @@ export default new Router({
       component: signUp
     },
     {
-      path: "/findadog",
+      path: "/dogsviews",
       name: "resultPage",
       component: userHome
     },

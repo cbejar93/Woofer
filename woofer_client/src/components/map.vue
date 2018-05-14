@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "map",
+    name: "CompanionMap",
     props: {
       'latitude': {
         type: Number,

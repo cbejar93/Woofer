@@ -30,6 +30,17 @@
               <label for="icon_email">Email</label>
             </div>
             <div class="input-field col s12">
+              <i class="material-icons prefix">arrow_drop_down_circle
+</i>
+              <select class="validate" name="user_type" id="user_type">
+               
+                <option value="0">Woofer</option>
+                <option value="1">Woofee</option>
+              </select>
+
+              <label for="user_type">What are you?</label>
+            </div>
+            <div class="input-field col s12">
               <i class="material-icons prefix">location_city</i>
               <input id="icon_zip" type="text" pattern="[0-9]{5}" class="validate" name="zipcode">
               <label for="icon_zip">Zipcode</label>
@@ -57,63 +68,64 @@
 </template>
 
 <script>
-  import userServices from "@/services/userServices";
+import userServices from "@/services/userServices";
 
-  export default {
-    name: "signUpForm",
-    data() {
-      return {
-        msg: ''
-      }
-    },
-    methods: {
-      async sendForm(e) {
-        e.preventDefault();
+export default {
+  name: "signUpForm",
+  data() {
+    return {
+      msg: ""
+    };
+  },
+  methods: {
+    async sendForm(e) {
+      e.preventDefault();
 
-        const form = document.querySelector('#addUser');
-        const values = Object.values(form).reduce((obj, field) => {
-          obj[field.name] = field.value;
-          return obj
-        }, {});
+      const form = document.querySelector("#addUser");
+      const values = Object.values(form).reduce((obj, field) => {
+        obj[field.name] = field.value;
+        return obj;
+      }, {});
 
-        const res = await userServices.addUser(values);
+      const res = await userServices.addUser(values);
 
-        this.msg = res.data.msg;
-        this.$router.push({
-          path: `/signin`
-        });
-      }
+      this.msg = res.data.msg;
+      this.$router.push({
+        path: `/signin`
+      });
     }
-  };
-
+  },
+  mounted() {
+    const elems = document.querySelectorAll('select');
+    const options = document.querySelectorAll('option');
+    const instances = M.FormSelect.init(elems, options)
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .sign-up-form {
-    width: 90%;
-    margin: 1em auto;
-  }
+.sign-up-form {
+  width: 90%;
+  margin: 1em auto;
+}
 
-  .alert {
-    width: 100%;
-    height: 100%;
-    ;
-    text-align: center;
+.alert {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
 
-  }
+.card {
+  padding: 1em;
+}
 
-  .card {
-    padding: 1em;
-  }
+button {
+  float: right;
+  margin: 1em;
+}
 
-  button {
-    float: right;
-    margin: 1em;
-  }
-
-  h5 {
-    padding: 20px 0;
-  }
-
+h5 {
+  padding: 20px 0;
+}
 </style>
