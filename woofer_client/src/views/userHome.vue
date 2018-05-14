@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  
     <div class="container">
       <h5>Your Companion Matches</h5>
 
@@ -13,25 +13,26 @@
 
     </div>
 
-
-
-  </div>
 </template>
 
 <script>
-  import googleMap from "../components/map";
-  import userMatches from "../components/userMatches";
+import googleMap from "../components/map";
+import userMatches from "../components/userMatches";
 
-  export default {
-    name: "userHome",
-    components: {
-      googleMap,
-      userMatches
-    }
-  };
-
+export default {
+  name: "userHome",
+  components: {
+    googleMap,
+    userMatches
+  }
+};
 </script>
 
 <style>
-  
+
+h5 {
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
 </style>
