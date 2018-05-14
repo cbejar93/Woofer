@@ -5,29 +5,23 @@
 
     <div class="row" id="matchPanel">
       <div class="col s2" id="dogImg">
-        <img src="../../../server/public/uploads/match_melo.jpg" id="matchImg" alt="Woofer Match" />
+        <img :src="dog.imgPath" id="matchImg" alt="Woofer Match" />
       </div>
 
       <div class="col s9 push-s1" id="dogDesc">
         <h6>Name:
           <span id="matchName">{{dog.name}}</span>
         </h6>
-        <h6>Breed:
-          <span id="breed">{{dog.breed}}</span>
-        </h6>
-        <h6>Gender:
-          <span id="gender">Gender</span>
-        </h6>
-        <h6>Age:
-          <span id="age">{{years}}</span>
-        </h6>
+
+        <h6>Breed: <span id="breed">{{dog.breed}}</span></h6>
+        <h6>Gender: <span id="gender">{{dog.gender}}</span></h6>
+        <h6>Age: <span id="age">{{years}}</span></h6>
         <h6>Character:
           <span id="charDesc">{{dog.character}}</span>
         </h6>
-        <p id="matchDesc">Melo loves going for walks and meeting other dogs. He’s also perfectly content laying his head in your lap. Melo
-          takes treats gently and gives the best hugs.</p>
-
-        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="btnClicked">Meet This Woofer</button>
+        <p id="matchDesc">{{dog.description}}</p>
+        
+        <button class="btn waves-effect waves-light" type="submit" name="action" v-on:click="btnClicked" >Meet This Woofer</button>
       </div>
     </div>
 
