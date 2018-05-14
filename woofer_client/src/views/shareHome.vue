@@ -30,7 +30,7 @@
         </span>
       </small>
 
-      <!-------- if Woofer-Share is true, proposal card shows -------->
+      <!--------- if Woofer-Share is true, proposal card shows ---------->
       <shareProposal v-if="true"></shareProposal>
 
       <!-------- if Woofer-Share is false, default message shows -------->

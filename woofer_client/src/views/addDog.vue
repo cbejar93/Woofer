@@ -7,6 +7,7 @@
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
       <div class="row">
+
         <form id="addDog" class="col s12 card" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s12">
@@ -45,6 +46,7 @@
               <label for="textarea1">Please enter a short description about your dog</label>
             </div>
           </div> -->
+
           <div class="row">
             <div class="file-field input-field col s12">
               <div class="btn btn-small">
