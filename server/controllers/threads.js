@@ -5,8 +5,8 @@ const db = require('./../models');
 router.get("/threads/:userId", function (req, res){
     db.Thread.findAll({
         where: { userId: req.params.userId}
-    }).then(function(dbThread){
-        res.json(dbThread);
+    }).then(function(dbThreads){
+        res.json(dbThreads);
     })
 })
 

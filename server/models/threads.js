@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 
   Thread.associate = function(models) {
     Thread.hasMany(models.Message, {
-      onDelate: "cascade"
+      onDelete: "cascade"
     })
   }
   return Thread;
