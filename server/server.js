@@ -8,6 +8,7 @@ const renter = require('./controllers/renter.js');
 const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
 const user = require('./controllers/users.js');
+const picture = require('./controllers/pictures.js');
 var db = require('./models');
 
 app.use(cors());
@@ -19,7 +20,8 @@ app.use(bodyParser.json());
 app.use('/api/renter', renter);
 app.use('/api/rentee', rentee);
 app.use('/api/props', props);
-app.use('/api/user', user )
+app.use('/api/user', user );
+app.use('api/upload', picture);
 
 
 app.get('/', (req, res) => {
