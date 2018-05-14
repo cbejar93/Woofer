@@ -9,9 +9,7 @@
         </div>
       </div>
       <br>
-      <userMatches></userMatches>
-      <userMatches></userMatches>
-      <userMatches></userMatches>
+      <userMatches v-for="dog in dogs" :dog="dog"/>
 
     </div>
 
@@ -20,6 +18,7 @@
 <script>
 import googleMap from "../components/map";
 import userMatches from "../components/userMatches";
+import userServices from  "@/services/userServices";
 
 export default {
   name: "userHome",
@@ -27,13 +26,23 @@ export default {
     googleMap,
     userMatches
   },
-  method: {
-    
-      clicked: function(id) {
+  data(){
+    return {
+      dogs: ''
+    }
+  },
+  methods: {
+    async getDogs() {
+      const res = await userServices.getDogsLocal();
+      this.dogs = res.data;
+      
+    },
+    clicked: function(id) {
 			console.log('The button has been clicked', id)
-    
-  }
-  }
+  },
+  created() {
+    this.getDogs();
+ 
 }
 </script>
 

@@ -12,5 +12,8 @@ export default {
     },
     getDogsWoofee (id) {
         return Api().get(`rentee/dogs/${id}`)
+    },
+    getDogsLocal() {
+        return Api().get('renter/getDogs')
     }
 }
