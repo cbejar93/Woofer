@@ -62,13 +62,7 @@ router.post('/upload', upload, function(req, res) {
     // } catch (err) {
     //     res.sendStatus(400);
     // }
-
     console.log('uploaded');
 });
-
-
-
-
-
 
 module.exports = router;
