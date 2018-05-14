@@ -9,7 +9,7 @@ const rentee = require('./controllers/rentee.js');
 const props = require('./controllers/proposals.js');
 const user = require('./controllers/users.js');
 
-const picture = require('./controllers/pictures.js');
+// const picture = require('./controllers/pictures.js');
 
 var db = require('./models');
 
@@ -24,7 +24,7 @@ app.use('/api/rentee', rentee);
 app.use('/api/props', props);
 
 app.use('/api/user', user );
-app.use('api/upload', picture);
+// app.use('api/upload', picture);
 
 
 
