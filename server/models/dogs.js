@@ -19,6 +19,9 @@ module.exports = function(sequelize, DataTypes) {
     description: {
       type: Sequelize.STRING
     },
+    gender: {
+      type: Sequelize.STRING
+    },
     breed: {
       type: Sequelize.STRING,
       allowNull: false

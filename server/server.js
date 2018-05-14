@@ -18,6 +18,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 // Use controllers
+app.use(express.static('public'))
 
 app.use('/api/renter', renter);
 app.use('/api/rentee', rentee);
