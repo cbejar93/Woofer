@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <img src="../assets/images/dog_peeper.jpg" id="signInImg" alt="sign in dog image" />
+    <img src="../assets/images/lg_dogImg01.jpg" id="signInImg" alt="sign in dog image" />
 
   </div>
 
@@ -93,8 +93,8 @@
   }
 
   #signInImg {
-    margin: 0 0 -5px 0;
-    width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 
 </style>

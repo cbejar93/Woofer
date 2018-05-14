@@ -59,6 +59,7 @@ main {
 
 h5,
 h6 {
+  line-height: 1.6;
   color: #b20e7b;
 }
 
