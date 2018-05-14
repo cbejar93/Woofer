@@ -7,9 +7,6 @@ module.exports = function(sequelize, DataTypes) {
   const Message = sequelize.define("Message", {
     content: {
       type: Sequelize.STRING,
-      validate: {
-        notNull: true
-      }
     },
   });
 
