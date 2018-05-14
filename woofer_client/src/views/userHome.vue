@@ -11,6 +11,31 @@
       <br>
 
       <userMatches v-for="dog in dogs" :dog="dog" v-on:interface="foo"/>
+      <button data-target="modal1" class="btn modal-trigger">Modal</button>
+
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Plan a Woofer Outing</h4>
+            <p>Where would you like to meet? </p>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <form id="addproposal">
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea"></textarea>
+                      <label for="textarea1">Where would you like to meet?</label>
+                    </div>
+                  </form>
+                </div>
+              </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="/dogsviews" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="/wooferhome" class="modal-close waves-effect waves-green btn-flat" v-on:click="sendForm">Agree</a>
+        </div>
+    </div>
 
     </div>
 
@@ -43,6 +68,13 @@ export default {
   },
   created() {
     this.getDogs();
+  },
+  mounted(){
+    
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+
+
   }
 };
 </script>
