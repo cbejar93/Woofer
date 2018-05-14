@@ -6,7 +6,7 @@ export default {
         return this.getLocal();
     },
     getLocal() {
-        return storage.getItem('session');
+        return JSON.parse(storage.getItem('session'));
     },
     deleteLocal(){
         storage.removeItem('session');

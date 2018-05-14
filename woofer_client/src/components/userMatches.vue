@@ -2,7 +2,8 @@
   <div id="app">
 
     <hr>
-    <div class="row">
+   
+    <div class="row" id="matchPanel">
       <div class="col s2" id="dogImg">
         <img src="../assets/images/match_melo.jpg" id="matchImg" alt="Woofer Match" />
       </div>
@@ -28,29 +29,38 @@
 </template>
 
 <script>
-  export default {
-    name: "userMatches",
-    components: {}
-  };
+export default {
+  name: "userMatches",
+  components: {
 
+  }
+};
 </script>
 
 <style scoped>
-  h6,
-  p {
-    line-height: 1.6;
-  }
 
-  #matchImg {
-    height: 150px;
-    width: 150px;
-    margin: 10px 20px;
-    border: 1px solid #797979;
-    padding: 5px;
-  }
+#matchPanel {
+  margin: 20px 0 30px 0;
+}
 
-  #dogDesc {
-    padding: 0;
-  }
+h6,
+p {
+  line-height: 1.6;
+}
 
+#matchImg {
+  height: 150px;
+  width: 150px;
+  margin: 10px 20px;
+  border: 1px solid #797979;
+  padding: 5px;
+}
+
+#dogDesc {
+  padding: 0;
+}
+
+span {
+  color: #797979;
+}
 </style>

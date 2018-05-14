@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: "map",
+    name: "CompanionMap",
     props: {
       'latitude': {
         type: Number,
@@ -25,7 +25,7 @@
       },
       'zoom': {
         type: Number,
-        default: function(){
+        default: function() {
           return 4
         }
       }
@@ -33,6 +33,7 @@
 
     data(){
       return {
+        markers: []
 
       }
     },
@@ -42,8 +43,30 @@
         center: {lat: this.latitude, lng: this.longitude},
         zoom: this.zoom
       });
+    },
+    computed:{  
+        locations(){
+          return this("This is where the location is supposed to go")
+        }
+      },
+      methods: {
+        // Builds markers for our array
+          buildMarkers(){
+            // local array for different markers
+            this.markers = []
+            // This for loop is to create all the different makers
+            for (var i = 0; i < this.cafelength; i++){
+              // The google map method for adding markers
+                var marker = new google.maps.Marker({
+                  position: {lat: parseFloat(this.cafes[i].latitude), lng: parseFloat(this.cafes[i].longitude)},
+                  map: this.map
+                });
+                this.markers.push(marker)
+            }
+          }
+      }
     }
-  }
+
 
 </script>
 
