@@ -7,7 +7,7 @@
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
       <div class="row">
-        <form id="addDog" class="col s12 card">
+        <form id="addDog" class="col s12 card z-depth-0">
           <!-- <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">pets</i>
@@ -111,6 +111,10 @@
   .sign-up-form {
     width: 90%;
     margin: 1em auto;
+  }
+
+  #addDog {
+    border: 1px solid #10C5CC;
   }
 
   button {

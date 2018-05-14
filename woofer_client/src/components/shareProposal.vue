@@ -2,7 +2,7 @@
   <div id="app">
 
     <!-- proposal card if someone wants to schedule time with a Woofer -->
-    <div class="card horizontal" id="propCard">
+    <div class="card horizontal z-depth-0" id="propCard">
       <div class="card-stacked">
         <div class="card-content">
 
@@ -34,13 +34,14 @@
 <style scoped>
   #propCard {
     margin: 15px 0 30px 0;
+    border: 1px solid #10C5CC;
   }
 
   .btn-small {
     margin: 0 0 0 10px;
   }
 
-  .card-action {
+  .card-action { 
     padding: 15px 0;
     margin: 10px 0 0 0;
   }

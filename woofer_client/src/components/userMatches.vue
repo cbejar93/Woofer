@@ -5,7 +5,7 @@
    
     <div class="row" id="matchPanel">
       <div class="col s2" id="dogImg">
-        <img src="../assets/images/match_melo.jpg" id="matchImg" alt="Woofer Match" />
+        <img src="../../../server/public/uploads/match_melo.jpg" id="matchImg" alt="Woofer Match" />
       </div>
 
       <div class="col s9 push-s1" id="dogDesc">
