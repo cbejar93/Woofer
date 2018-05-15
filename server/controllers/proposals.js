@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const db = require('./../models');
 
+// This sends information so that users can see what proposal for woof hangout they have 
+
 router.get('/getproposalsRentee/:id', function(req, res) {
     console.log(req.params.id)
     db.Proposal.findAll({
@@ -12,7 +14,7 @@ router.get('/getproposalsRentee/:id', function(req, res) {
         } 
     }).then(results => res.send(results));
 });
-
+// This creates a Woof proposal 
 router.post('/createprop', function(req, res) {
     const proposal = req.body.formData;
     db.Proposal.create(proposal).then(results => res.send(results));   

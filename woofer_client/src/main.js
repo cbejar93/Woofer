@@ -10,6 +10,7 @@ Vue.use(VueAgile)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+// This is the logic that helps posts the components in the views. Everything has to go through this constructer 
 new Vue({
   el: '#app',
   router,

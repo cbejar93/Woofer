@@ -9,7 +9,7 @@
         </div>
       </div>
       <br>
-
+      <!-- This calls the userMatches componenet so users are able to see which dogs they would like to hang out with  -->
       <userMatches v-for="dog in dogs" :dog="dog" :user="user" :key="dog.id" v-on:interface="foo"/>
       
       

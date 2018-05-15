@@ -1,6 +1,7 @@
 <template>
 
   <div class="login">
+  // This is for the login 
     <div class="container">
       <div class="row">
         <h5 class="title">Welcome back to Woofer!</h5>
@@ -31,7 +32,9 @@
 </template>
 
 <script>
+// User services is able to communicate with the backend
   import userServices from "@/services/userServices";
+  // Local stroage keeps the current user information in local storage 
   import localStorages from "@/services/localStorage";
   export default {
     name: "loginForm",
@@ -43,6 +46,7 @@
       };
     },
     methods: {
+      // Sends all the login information to the server.js in the backend
       async sendForm(e) {
         e.preventDefault();
 

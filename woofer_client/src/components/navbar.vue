@@ -2,6 +2,7 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
+      <!-- This is the navbar for when no one is logged in -->
         <img src="../assets/images/logo_white.png" class="brand-logo"  />
         <ul v-if="!user" id="nav-mobile" class="right hide-on-med-and-down">
           <li>
@@ -14,6 +15,7 @@
             <router-link class="waves-effect" to="/">Home</router-link>
           </li>
         </ul>
+        <!-- Vue directive for is someone is signed in  -->
         <ul v-else-if="user.type == 1" id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             <router-link class="waves-effect" to="/shareprofile">Home</router-link>

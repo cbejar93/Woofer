@@ -1,8 +1,7 @@
 <template>
-
   <div class="container">
     <div class="sign-up-form">
-
+  // This is where Woofer Partners are able to add their dogs to share.
       <h5 id="title">Thanks for sharing your dog's companionship.
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
@@ -58,6 +57,7 @@
             </div>
           </div>
           <div class="row">
+          // The v:on click below is a Vue directive that add vue logic to the template
             <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
             </button>
           </div>
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+// This imports the database. 
   import userServices from  "@/services/userServices";
 
   export default {
@@ -108,9 +109,10 @@
     }
     },
     mounted(){ 
+      // This is to submit our form to the backend server 
        const elems = document.querySelectorAll('.datepicker');
        const instances = M.Datepicker.init(elems);
-
+    // This is the cloudniry logic to be able to upload pictures to their cloud
         document.getElementById("img-up").addEventListener("click", function() {
         cloudinary.openUploadWidget({ cloud_name: 'dd0fpirjd', 
             upload_preset: 'hb40qhpx', 
