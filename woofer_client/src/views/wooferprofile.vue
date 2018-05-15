@@ -1,7 +1,7 @@
 <template>
 <div id="app">
     <div class="container">
-        <h5>Your Woofer Profile</h5>
+        <h5>Your Woofer Dashboard</h5>
         <div class="row" id="btnSection">
                 <button class="btn waves-effect waves-light" type="submit" name="action" id="updateProfileBtn">Update Profile</button>       
         </div>

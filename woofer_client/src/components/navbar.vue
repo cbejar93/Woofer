@@ -2,7 +2,7 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <img src="../assets/images/logo_white.png" class="brand-logo" />
+        <img src="../assets/images/logo_white.png" class="brand-logo"  />
         <ul v-if="!user" id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             <router-link class="waves-effect" to="/join">Become a Woofer</router-link>
