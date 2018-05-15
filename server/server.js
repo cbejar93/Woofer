@@ -18,7 +18,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 // Use controllers
-app.use(express.static('public'))
+
 app.use('/',serveStatic(__dirname + "/dist"));
 
 app.use('/api/renter', renter);

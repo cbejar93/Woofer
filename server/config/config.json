@@ -16,10 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "Woofer_db",
-    "host": "127.0.0.1",
+    "username": "gghjis8zlc0c9g9m",
+    "password": "w3cip5qf655b5i3c",
+    "database": "uwb9e64bdm64j75v",
+    "host": "ol5tz0yvwp930510.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 } 
