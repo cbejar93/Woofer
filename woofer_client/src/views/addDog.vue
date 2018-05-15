@@ -117,12 +117,15 @@
             cropping: 'server',
             cropping_aspect_ratio: 1 ,
             folder: 'Dog_Photos', 
-            sources: [ 'local', 'url', 'facebook', 'instagram', 'dropbox', 'camera'], 
+            sources: [ 'local', 'url', 'camera'], 
             theme: 'minimal'}, 
         function(error, result) { console.log(error, result); 
             image="https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload"+result[0].path; 
                 console.log(image) 
                 });
+                var url = $.cloudinary.url('Dog_Photos', {format: 'json', type: 'list'});
+                return url;
+                console.log(url);
             }, 
                 false);
         }
