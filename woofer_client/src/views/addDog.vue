@@ -120,10 +120,10 @@
             sources: [ 'local', 'url', 'camera'], 
             theme: 'minimal'}, 
         function(error, result) { console.log(error, result); 
-            image="https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload"+result[0].path; 
+            var image="https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload"+result[0].path; 
                 console.log(image) 
                 });
-                var url = $.cloudinary.url('Dog_Photos', {format: 'json', type: 'list'});
+                var url = cloudinary.url('Dog_Photos', {format: 'json', type: 'list'});
                 return url;
                 console.log(url);
             }, 
