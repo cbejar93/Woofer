@@ -17,7 +17,7 @@ ability to message Partner regarding request      | accept or decline requests
 
 ### Homepage Screenshot
 
-![Woofer Homepage](woofer_client/src/assets/images/placeholder_img_link.jpg)
+![Woofer Homepage](woofer_client/src/assets/images/screenshot_home.jpg)
 
 
 ### Technologies Applied
