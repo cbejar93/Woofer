@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-
+var serveStatic = require('serve-static');
 //  Import controllers
 const renter = require('./controllers/renter.js');
 const rentee = require('./controllers/rentee.js');
@@ -19,6 +19,7 @@ app.use(cors());
 app.use(bodyParser.json());
 // Use controllers
 app.use(express.static('public'))
+app.use('/',serveStatic(__dirname + "/dist"));
 
 app.use('/api/renter', renter);
 app.use('/api/rentee', rentee);
