@@ -7,15 +7,15 @@
       <div class="card-stacked">
         <div class="card-content">
 
-          <p id="date">5/13/18</p>
+          <p id="date">{{proposal.createdAt}}</p>
           <p>
             <span id="userName">Liz Ehmann</span> would like to schedule time with
-            <span id="dogName">Sasha</span>
+            <span id="dogName">{{proposal}}</span>
           </p>
 
           <div class="card-action">
             <!-- Modal Trigger -->
-            <button class="btn modal-trigger waves-effect waves-light btn-small" data-target="detailsModal" id="detailsBtn">View Details</button>
+            <button class="btn modal-trigger waves-effect waves-light btn-small" :data-target="proposal.id" id="detailsBtn">View Details</button>
 
             <button class="btn waves-effect waves-light btn-small" type="submit" name="action" id="deleteBtn">Remove</button>
           </div>
@@ -26,12 +26,12 @@
 
     <!-------------------------------- Visit Details Modal Structure ---------------------------------------->
 
-    <div id="detailsModal" class="modal">
+    <div :id="proposal.id" class="modal">
       <div class="modal-content">
         <h5>Meeting Details for <span id="sharedDogName"> Sasha</span></h5>
         <h6>Time requested by: <span id="renter_id"> Liz Ehmann</span></h6>
         <h6>Requested date and time: <span id="reqDateTime"> 5/17/18, 11:30am</span></h6>
-        <h6>Meeting address: <span id="meetAddy"> 3280 Progress Dr., Orlando, FL 32826</span></h6>
+        <h6>Meeting address: <span id="meetAddy">{{proposal.meetAddress}}</span></h6>
         
         <!-- EXTRA FEATURE ... user paws (star) rating? -->
         <h6>Rating: <span id="pawsRating"><i class="tiny material-icons">pets</i></span></h6>
@@ -49,9 +49,11 @@
 <script>
   export default {
     name: "shareProposal",
+    props: ['proposal'],
     mounted() {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
+      console.log(this.proposal.meetAddress)
     }
   };
 

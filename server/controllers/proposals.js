@@ -1,30 +1,18 @@
 const router = require('express').Router();
 const db = require('./../models');
 
-router.get('/getproposals/:renter_id/:rentee_id', function(req, res) {
-    var renterId = req.params.renter_id;
-    var renteeId = req.params.rentee_id;
+router.get('/getproposalsRentee/:id', function(req, res) {
+    console.log(req.params.id)
     db.Proposal.findAll({
         where: {
-            renter_id: renterId,
-            rentee_id: renteeId
+            rentee_id: req.params.id
         }
     }).then(results => res.send(results));
 });
 
 router.post('/createprop', function(req, res) {
-    var dogId = req.body.dogId;
-    var renterId = req.body.renterId;
-    var renteeId = req.body.renteeId;
-    var meetAddress = req.body.meetAddress;
-    console.log(dogId);
-    db.Proposal.create({
-        dogId: dogId,
-        renter_id: renterId,
-        rentee_id: renteeId,
-        meetAddress: meetAddress,
-        state: 0
-    }).then(results => res.send(results));   
+    const proposal = req.body.formData;
+    db.Proposal.create(proposal).then(results => res.send(results));   
 });
 
 

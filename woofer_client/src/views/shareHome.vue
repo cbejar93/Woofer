@@ -13,13 +13,13 @@
       
       <div class="row">
         <h6>Woofers You Share</h6>
-          <woofeeDog v-for="dog in dogs" :dog="dog"/>
+          <woofeeDog v-for="dog in dogs" :dog="dog" :key="dogs.id"/>
       </div>
 
       <hr>
 
       <h6>Pending Proposals
-        <span id="numProposals">(1)</span>
+        <span id="numProposals">({{howManyProps}})</span>
       </h6>
       <small>Sort by:
         <span>
@@ -31,7 +31,7 @@
       </small>
 
       <!--------- if Woofer-Share is true, proposal card shows ---------->
-      <shareProposal v-if="true"></shareProposal>
+      <shareProposal v-if="proposals" v-for="prop in proposals" :key="prop.id" :proposal="prop"></shareProposal>
 
       <!-------- if Woofer-Share is false, default message shows -------->
       <div class="card horizontal" id="defaultCard" v-else>
@@ -65,17 +65,25 @@
     props: ['user'],
     data() {
       return {
-        dogs: ''
+        dogs: '',
+        proposals: '',
+        howManyProps: ''
       }
     },
     methods: {
       async getDogs() {
         const res = await userServices.getDogsWoofee(this.user.id);
         this.dogs = res.data;
+      },
+      async getProposals(){
+        const res = await userServices.getProposal(this.user.id);
+        this.proposals = res.data;
+        this.howManyProps = res.data.length
       }
     },
     created() {
       this.getDogs();
+      this.getProposals();
     }
 
     

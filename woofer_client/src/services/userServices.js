@@ -15,5 +15,11 @@ export default {
     },
     getDogsLocal() {
         return Api().get('renter/getDogs')
+    },
+    addProposal(formData){
+        return Api().post('props/createprop', {formData})
+    },
+    getProposal(id) {
+        return Api().get(`props/getproposalsRentee/${id}`)
     }
 }

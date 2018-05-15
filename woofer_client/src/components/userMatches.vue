@@ -21,9 +21,31 @@
           <span id="charDesc">{{dog.character}}</span>
         </h6>
         <p id="matchDesc">{{dog.description}}</p>
-        
-        <button class="btn waves-effect waves-light" type="submit" name="action" id="modalbtn" href="#modal1" v-on:click="btnClicked" >Meet This Woofer</button>
+        <button :data-target="dog.id" class="btn modal-trigger">Meet This Woofer</button>
       </div>
+    </div>
+        <div v-bind:id="dog.id" class="modal">
+        <div class="modal-content">
+            <h4>Plan a Woofer Outing</h4>
+            <p>Where would you like to meet with {{dog.name}} ?</p>
+      
+         
+                <div class="row">
+                  <form id="addProp">
+                    <div class="input-field col s12">
+                      <textarea class="materialize-textarea" name="meetAddress"></textarea>
+                      <label for="textarea1">Where would you like to meet?</label>
+                    </div>
+                    <div class="modal-footer">
+                       <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                       <a v-on:click="sendForm"  class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                  </form>
+                </div>
+
+           
+        </div>
+
     </div>
 
   </div>
@@ -34,7 +56,7 @@
   export default {
     name: "userMatches",
     components: {},
-    props: ["dog"],
+    props: ["dog", "user"],
     data() {
       return {
         years: ""
@@ -48,10 +70,32 @@
       },
       btnClicked() {
         this.$emit("interface", "Carlos!");
+      },
+      async sendForm(e) {
+        e.preventDefault();
+
+        const form = document.querySelector("#addProp");
+        const values = Object.values(form).reduce((obj, field) => {
+          obj[field.name] = field.value;
+          return obj;
+        }, {});
+
+        values.dogId = this.dog.id;
+        values.renter_id = this.user.id; 
+        values.rentee_id = this.dog.userId;
+        values.state = 0;
+        const res = await userServices.addProposal(values);
+        console.log(res);
+ 
       }
+      
     },
     created() {
       this.calcYear();
+    
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+
     }
   };
 
