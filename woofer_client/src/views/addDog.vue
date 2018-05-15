@@ -46,7 +46,7 @@
               <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
               <label for="textarea1">Please enter a short description about your dog</label>
             </div>
-          </div> -->
+          </div>
 
           <div class="row">
             <div class="file-field input-field col s12">
@@ -127,8 +127,6 @@
                 false);
         }
     }
-
-  // need to add code for sendForm
 
 </script>
 
