@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-
+<!-- Our home view with the Vue carosel  -->
     <div class="row" id="carousel">
       <agile :arrows="false" :autoPlaySpeed="2500" :timing="'linear'" :fade="true" :autoplay="true" :dots="false" :pauseOnHover="false">
         <div class="slide slide--1">
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+// to be able to talk to the backend
 import localStorage from "@/services/localStorage.js";
 export default {
   name: "home",

@@ -4,6 +4,7 @@
             <a href="#">
                 <img src="../assets/images/profile_sasha.jpg" class="dogImg" />
              </a>
+            <!-- A vue instance that gives us several dog names -->
              <p>{{dog.name}}</p>
         </div>
     </div>
@@ -12,6 +13,7 @@
 <script>
   import userServices from  "@/services/userServices";
   export default {
+    // exporting it
     name: "woofeeDog",
     props:['dog'],
     updated() {

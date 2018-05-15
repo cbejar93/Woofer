@@ -1,4 +1,5 @@
 import Api from "@/services/api"
+// This handles all the api responses
 
 export default {
     addUser (formData) {

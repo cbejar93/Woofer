@@ -3,7 +3,6 @@
     <div class="container">
 
       <h5>Your Woofer Profile</h5>
-
       <div class="row" id="btnSection">
         <button class="btn waves-effect waves-light right" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
         <button class="btn waves-effect waves-light right" type="submit" name="action" id="addDogBtn">Add a Dog</button>
@@ -13,6 +12,8 @@
       
       <div class="row">
         <h6>Woofers You Share</h6>
+        <!-- ------  This is more vue logic, for all the dogs that are in the object. ------  -->
+        <!-- // This is the Vue component -->
           <woofeeDog v-for="dog in dogs" :dog="dog" :key="dogs.id"/>
       </div>
       
@@ -20,6 +21,7 @@
       <hr>
 
       <h6>Pending Proposals
+      <!-- // This the reactivity avaialable for vue  -->
         <span id="numProposals">({{howManyProps}})</span>
       </h6>
       <small>Sort by:
@@ -57,11 +59,14 @@
 
 <script>
   import shareProposal from "../components/shareProposal";
+  // A Vue component 
   import userServices from  "@/services/userServices";
+  // A Vue component 
   import woofeeDog  from "../components/woofeeDogProfile";
   export default {
     name: "shareHome",
     components: {
+      // You have to include the componenets to pass on to the app vue  
       shareProposal,
       woofeeDog
     },

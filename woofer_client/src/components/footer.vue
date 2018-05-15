@@ -1,6 +1,6 @@
 <template>
   <footer class="page-footer">
-
+<!-- German did a great job bringing reactivity to the year -->
     <img src="../assets/images/logo_sm.png" />
     <p class="right">Woofer © {{year}} Fourtastic</p>
 

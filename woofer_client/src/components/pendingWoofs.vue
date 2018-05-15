@@ -1,5 +1,6 @@
 <template>
-  <div class="card horizontal z-depth-0" id="propCard">
+<div>
+    <div class="card horizontal z-depth-0" id="propCard">
                 <div class="card-stacked">
                   <div class="card-content">
           
@@ -43,6 +44,7 @@
     </form>
 
   </div>
+</div>
 </template>
 
 <script>
