@@ -2,35 +2,50 @@
 
 ### What is this?
 
-> A Vue.js project
+Woofer is a dog sharing service that offers the joy and companionship of a canine best friend whenever you need it.
+
+View the [Woofer App here](www.someURL.com)
 
 ### How does it work?
 
+If you're a Woofer User                           | If you're a Woofer Partner
+------------------------------------------------- | ----------------------------------
+create a User profile                             | create a Partner profile
+search for dogs in the area to schedule time with | add your dog to share in Partner Profile
+select dog(s) and send request to Partner         | receive and view requests in Partner Profile
+ability to message Partner regarding request      | accept or decline requests
 
-### Screenshots
+### Homepage Screenshot
 
-![alt](public/assets/imgs/placeholder_img_link.jpg)
+![Woofer Homepage](woofer_client/src/assets/images/screenshot_home.jpg)
 
 
 ### Technologies Applied
 
+* [Vue.js](https://vuejs.org/)
+* [Materialize CSS](https://materializecss.com/)
+* [Sequelize](http://docs.sequelizejs.com/)
+* Node
+* Express
+* Axios
+
+
 ### Build Setup
 
-``` bash
-# install dependencies
+##### install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+##### serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+##### build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
+##### build for production and view the bundle analyzer report
 npm run build --report
 
-# homepage carousel
-npm install vue-agile https://github.com/lukaszflorczak/vue-agile
-```
+##### homepage carousel
+npm install [vue-agile](https://github.com/lukaszflorczak/vue-agile)
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
