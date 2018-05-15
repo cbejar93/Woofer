@@ -25,6 +25,7 @@ ability to message Partner regarding request      | accept or decline requests
 * [Vue.js](https://vuejs.org/)
 * [Materialize CSS](https://materializecss.com/)
 * [Sequelize](http://docs.sequelizejs.com/)
+* [Cloudinary](https://cloudinary.com/)
 * Node
 * Express
 * Axios
