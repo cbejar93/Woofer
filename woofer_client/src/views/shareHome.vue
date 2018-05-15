@@ -5,7 +5,9 @@
       <h5>Your Woofer Profile</h5>
       <div class="row" id="btnSection">
         <button class="btn waves-effect waves-light right" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
+        <form action="addDog">
         <button class="btn waves-effect waves-light right" type="submit" name="action" id="addDogBtn">Add a Dog</button>
+        </form>      
       </div>
 
       <hr>

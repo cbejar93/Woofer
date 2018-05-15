@@ -4,7 +4,10 @@
         <h5>Your Woofer Dashboard</h5>
         <div class="row" id="btnSection">
                 <button class="btn waves-effect waves-light" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="inboxbBtn" href="/inbox">Inbox</button>      
+                <form action="inbox">
+               
+               <button class="btn waves-effect waves-light" type="submit" name="action" id="inboxbBtn" href="/inbox">Inbox</button>      
+              </form>     
         </div>
         <div class="row">
             <h6>Your Pending Woof Hangouts</h6>

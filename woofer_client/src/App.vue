@@ -1,10 +1,8 @@
-// App vue is where all the views and components are passed in through.
-// Here we have to components that are in all our different pages the navbar and footer and the state change for the user interface
 
 <template>
   <div id="app">
     <main>
-    
+    <!-- This is where components that every page is placed, the navbar and footer, the rest of the pages flow through here when the router does its thing -->
       <navbar1 :user="user" @interface="user = $event" />
       <router-view :user="user" @interface="user = $event" />
     </main>
@@ -37,6 +35,7 @@
       }
 
     },
+    // Mounted is part of the lifecycle of vue, important for data change or sending data back and forth
     mounted() {
       this.user = this.checkUser();
       console.log(this.user);

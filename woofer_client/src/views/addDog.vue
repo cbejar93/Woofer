@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="sign-up-form">
-  // This is where Woofer Partners are able to add their dogs to share.
+      <!-- This is where Woofer Partners can add a god to share -->
       <h5 id="title">Thanks for sharing your dog's companionship.
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
@@ -57,7 +57,7 @@
             </div>
           </div>
           <div class="row">
-          // The v:on click below is a Vue directive that add vue logic to the template
+          <!-- // The v:on click below is a Vue directive that add vue logic to the template -->
             <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
             </button>
           </div>
