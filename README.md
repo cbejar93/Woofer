@@ -1,4 +1,11 @@
 # Woofer Dog Sharing App
+#### By Fourtastic
+
+### Team Members
+- Carlos Bejar (El Jefe, Front End and Back End Support)
+- Christine Pablo (Admin Support, Design, and Front End)
+- German Gamboa (Back End Architect and Lead)
+- Roshnee Acevedo (Back End and Front End Support)
 
 ### What is this?
 
