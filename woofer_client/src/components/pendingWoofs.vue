@@ -3,10 +3,10 @@
                 <div class="card-stacked">
                   <div class="card-content">
           
-                    <p id="date">5/13/18</p>
+                    <p id="date">{{proposal.createdAt}}</p>
                     <p>
-                      <span id="userName">You've requested woofee Liz Ehmann</span> 
-                      <span id="dogName"> to hang out with Sasha</span>
+                      <span id="userName">You've requested woofee {{proposal.woofee.firstName}} {{proposal.woofee.lastName}}</span> 
+                      <span id="dogName"> to hang out with {{proposal.dog.name}}</span>
                     </p>
           
                     <div class="card-action">
@@ -22,6 +22,7 @@
 <script>
     export default {
         name: "pendingwoofs",
+        props: ['proposal'],
         components:{
 
         }

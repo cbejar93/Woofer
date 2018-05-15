@@ -62,4 +62,14 @@ router.get("/dogs/:id", (req, res) => {
   }).then(results => res.json(results));
 });
 
+router.get('/getDogsById/:id', (req, res) => {
+  const id = req.params.id; 
+  db.Dog.findOne({
+      where: {
+          id: id
+      }
+  })
+  .then(results => res.json(results));
+});
+
 module.exports = router;

@@ -21,5 +21,14 @@ export default {
     },
     getProposal(id) {
         return Api().get(`props/getproposalsRentee/${id}`)
+    },
+    getDogById(id){
+        return Api().get(`rentee/getDogsById/${id}`)
+    },
+    getUserById(id){
+        return Api().get(`user/getUserById/${id}`)
+    },
+    updateProposal(id,state){
+        return Api().put(`props/updateprop/${state}/${id}`)
     }
 }
