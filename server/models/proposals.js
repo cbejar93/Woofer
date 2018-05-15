@@ -10,5 +10,6 @@ module.exports = function(sequelize, DataTypes) {
     state: DataTypes.INTEGER
   });
 
+
   return Proposal;
 };

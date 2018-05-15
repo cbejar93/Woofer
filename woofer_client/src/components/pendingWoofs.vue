@@ -1,21 +1,22 @@
 <template>
   <div class="card horizontal z-depth-0" id="propCard">
-    <div class="card-stacked">
-      <div class="card-content">
-
-        <p id="date">5/13/18</p>
-        <p>
-          You've requested time with
-          <span id="dogName"> Sasha</span>
-        </p>
-
-        <div class="card-action">
-          <button class="btn waves-effect waves-light btn-small modal-trigger" type="submit" name="action" id="detailsBtn" data-target="msgModal">Message</button>
-          <button class="btn waves-effect waves-light btn-small" type="submit" name="action" id="deleteBtn">Cancel</button>
-        </div>
-
-      </div>
-    </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+          
+                    <p id="date">{{proposal.createdAt}}</p>
+                    <p>
+                      <span id="userName">You've requested woofee {{proposal.woofee.firstName}} {{proposal.woofee.lastName}}</span> 
+                      <span id="dogName"> to hang out with {{proposal.dog.name}}</span>
+                    </p>
+          
+                    <div class="card-action">
+                      <button class="btn waves-effect waves-light btn-small" type="submit" name="action" id="detailsBtn">Message</button>
+                      <button class="btn waves-effect waves-light btn-small" type="submit" name="action" id="deleteBtn">Cancel</button>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
 
     <!------------------------------- Modal Structure ------------------------------------>
     <form>
@@ -47,6 +48,7 @@
 <script>
   export default {
     name: "pendingwoofs",
+    props: ['proposal'],
     mounted() {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);

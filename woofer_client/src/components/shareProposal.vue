@@ -1,16 +1,22 @@
 <template>
-  <div id="app">
+  <div v-if="show" id="app">
 
     <!-- proposal card if someone wants to schedule time with a Woofer -->
     <div class="card horizontal z-depth-0" id="propCard">
-
       <div class="card-stacked">
         <div class="card-content">
 
           <p id="date">{{proposal.createdAt}}</p>
           <p>
-            <span id="userName">Liz Ehmann</span> would like to schedule time with
-            <span id="dogName">{{proposal}}</span>
+            <span id="userName">{{proposal.woofer.firstName}} {{proposal.woofer.lastName}}</span> would like to schedule time with
+            <span id="dogName">{{proposal.dog.name}}</span>
+            <p v-if="proposal.state == 1">
+  
+                You have accepted this proposal. 
+            </p>
+            <p v-if="proposal.state == 2 ">
+                You have declined this proposal.
+            </p>
           </p>
 
           <div class="card-action">
@@ -28,8 +34,8 @@
 
     <div :id="proposal.id" class="modal">
       <div class="modal-content">
-        <h5>Meeting Details for <span id="sharedDogName"> Sasha</span></h5>
-        <h6>Time requested by: <span id="renter_id"> Liz Ehmann</span></h6>
+        <h5>Meeting Details for <span id="sharedDogName">{{proposal.dog.name}}</span></h5>
+        <h6>Time requested by: <span id="renter_id">{{proposal.woofer.firstName}} {{proposal.woofer.lastName}}</span></h6>
         <h6>Requested date and time: <span id="reqDateTime"> 5/17/18, 11:30am</span></h6>
         <h6>Meeting address: <span id="meetAddy">{{proposal.meetAddress}}</span></h6>
         
@@ -38,8 +44,8 @@
       </div>
       <hr>
       <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-light btn-flat">Accept</a>
-        <a href="#!" class="modal-close waves-effect waves-light btn-flat">Decline</a>
+        <button type="submit" v-on:click="updateProposal" value="1" class="waves-effect waves-light btn-flat">Accept</button>
+        <button type="submit" v-on:click="updateProposal"  value="2" class="waves-effect waves-light btn-flat">Decline</button>
       </div>
     </div>
 
@@ -47,13 +53,30 @@
 </template>
 
 <script>
+  import userServices from  "@/services/userServices";
+  let nastyGlobal = []
   export default {
     name: "shareProposal",
     props: ['proposal'],
+    data(){
+      return {
+        show: true,
+  
+      }
+    },
+    methods: {
+      async updateProposal(e) {
+        e.preventDefault();
+        const state = e.target.value; 
+        const res = await userServices.updateProposal(this.proposal.id, state)
+        nastyGlobal.forEach(modal => modal.close())
+
+      }
+    },
     mounted() {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
-      console.log(this.proposal.meetAddress)
+      nastyGlobal = instances;
     }
   };
 
@@ -66,7 +89,7 @@
   }
 
   .btn-small {
-    margin: 0 0 0 10px;
+    margin: .5em;
   }
 
   .card-action { 
@@ -76,10 +99,6 @@
 
   .card-content {
     padding: 10px 20px;
-  }
-
-  #detailsBtn {
-    margin: 0;
   }
 
   #date {

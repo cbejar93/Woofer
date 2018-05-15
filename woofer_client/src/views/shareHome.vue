@@ -5,8 +5,8 @@
       <h5>Your Woofer Profile</h5>
 
       <div class="row" id="btnSection">
-        <button class="btn waves-effect waves-light" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
-        <button class="btn waves-effect waves-light" type="submit" name="action" id="addDogBtn">Add a Dog</button>
+        <button class="btn waves-effect waves-light right" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
+        <button class="btn waves-effect waves-light right" type="submit" name="action" id="addDogBtn">Add a Dog</button>
       </div>
 
       <hr>
@@ -15,6 +15,7 @@
         <h6>Woofers You Share</h6>
           <woofeeDog v-for="dog in dogs" :dog="dog" :key="dogs.id"/>
       </div>
+      
 
       <hr>
 
@@ -31,7 +32,9 @@
       </small>
 
       <!--------- if Woofer-Share is true, proposal card shows ---------->
-      <shareProposal v-if="proposals" v-for="prop in proposals" :key="prop.id" :proposal="prop"></shareProposal>
+      <shareProposal v-if="proposals" v-for="prop in proposals" :key="prop.id" :proposal="prop" />
+
+    
 
       <!-------- if Woofer-Share is false, default message shows -------->
       <div class="card horizontal" id="defaultCard" v-else>
@@ -66,7 +69,7 @@
     data() {
       return {
         dogs: '',
-        proposals: '',
+        proposals: {},
         howManyProps: ''
       }
     },
@@ -77,15 +80,28 @@
       },
       async getProposals(){
         const res = await userServices.getProposal(this.user.id);
-        this.proposals = res.data;
+        const temp   = res.data;
         this.howManyProps = res.data.length
+        temp.forEach(async (item, index) => {
+           item.woofer = (await this.getUsers(item.renter_id)).data
+           item.woofee = (await this.getUsers(item.rentee_id)).data
+           item.dog = (await this.getDogsById(item.dogId)).data
+           this.$set(this.proposals, index , item)
+        });
+  
+      },
+      async getDogsById(id){
+        return await userServices.getDogById(id)
+       
+      },
+      async getUsers(id) {
+        return await userServices.getUserById(id)
       }
     },
     created() {
       this.getDogs();
       this.getProposals();
     }
-
     
   };
 
@@ -111,8 +127,8 @@
     max-width: 200px;
   }
 
-  #addDogBtn {
-    margin: 0 0 0 10px;
+  .btn {
+    margin: .5em;
   }
 
   .btn-flat {

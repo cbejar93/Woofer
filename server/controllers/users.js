@@ -43,6 +43,15 @@ router.post('/add_user', (req,res) => {
     }
 });
 
+router.get('/getUserById/:id', (req, res) => {
+    const id = req.params.id; 
+    db.User.findOne({
+        where: {
+            id: id
+        }
+    })
+    .then(results => res.json(results));
+});
 
 router.post('/login', (req, res) => {
     console.log(req.body, 'asdfs')
