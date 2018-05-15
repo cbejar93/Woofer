@@ -45,19 +45,19 @@
     <div class="container">
       <div class="row">
 
-        <div class="col m4">
+        <div class="col m4" id="col1">
           <i class="medium material-icons sectionIcon">pets</i>
           <p>Just a couple of clicks and you can schedule time with one of our Woofer dogs. Or, if you have a dog who loves
             meeting new people, become a Woofer partner and get your dog some extra playtime!</p>
         </div>
 
-        <div class="col m4">
+        <div class="col m4" id="col2">
           <i class="medium material-icons sectionIcon">check_circle_outline</i>
           <p>Our Woofer dogs, their people, and those looking to schedule time with a dog are fully vetted. Woofer dogs are
             microchipped and tracked by GPS.</p>
         </div>
 
-        <div class="col m4">
+        <div class="col m4" id="col3">
           <i class="medium material-icons sectionIcon">favorite</i>
           <p>Did you know? Playing with or petting a dog can help reduce stress and keep your heart healthy. Read more about
             it
@@ -72,63 +72,67 @@
 </template>
 
 <script>
-  import localStorage from "@/services/localStorage.js";
-  export default {
-    name: "home",
-    components: {},
-    methods: {
-      getData(data) {
-        return localStorage.getLocal();
-      }
+import localStorage from "@/services/localStorage.js";
+export default {
+  name: "home",
+  components: {},
+  methods: {
+    getData(data) {
+      return localStorage.getLocal();
     }
-  };
-
+  }
+};
 </script>
 
 
 <style scoped>
-  img {
-    width: 100%;
-  }
+img {
+  width: 100%;
+}
 
-  hr {
-    margin: -5px 0;
-  }
+hr {
+  margin: -5px 0;
+}
 
-  h5 {
-    padding: 20px 0;
-  }
+h5 {
+  padding: 20px 0;
+}
 
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-  #shelterInfoPanel {
-    margin: 0 0 -5px 0;
-  }
+#shelterInfoPanel {
+  margin: 0 0 -5px 0;
+}
 
-  #dogPanelImg {
-    margin: 20px 0 0 0;
-  }
+#dogPanelImg {
+  margin: 20px 0 0 0;
+}
 
-  .sectionIcon {
-    color: #FFE447;
-    display: block;
-    margin: 40px auto;
-    max-width: 75px;
-  }
+.sectionIcon {
+  color: #ffe447;
+  display: block;
+  margin: 40px auto;
+  max-width: 75px;
+}
 
-  a:visited {
-    color: rgb(14, 153, 158);
-  }
+a:visited {
+  color: rgb(14, 153, 158);
+}
 
-  a:hover {
-    color: rgb(27, 228, 235);
-  }
+a:hover {
+  color: rgb(27, 228, 235);
+}
 
-  a:active {
-    color: #10C5CC;
-  }
+a:active {
+  color: #10c5cc;
+}
 
+#col1,
+#col2,
+#col3 {
+  padding: 0 15px;
+}
 </style>

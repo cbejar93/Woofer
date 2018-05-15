@@ -4,7 +4,7 @@
 
 Woofer is a dog sharing service that offers the joy and companionship of a canine best friend whenever you need it.
 
-View the [Woofer App here](www.someURL.com)
+View the [Woofer App here](https://woofer-2018.herokuapp.com/)
 
 ### How does it work?
 
