@@ -24,12 +24,12 @@ ability to message Partner regarding request      | accept or decline requests
 
 ### Screenshots
 
-#### Homepage
-<br>
+##### Homepage
+
 ![Woofer Homepage](woofer_client/src/assets/images/screenshot_home.jpg)
 
-####
-<br>
+##### Sign In Page
+
 ![Woofer Sign In Page](woofer_client/src/assets/images/screenshot_signin.jpg)
 
 
