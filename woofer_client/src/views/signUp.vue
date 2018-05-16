@@ -58,6 +58,7 @@
               <input id="password1" type="password" class="validate" name="password_one">
               <label for="password1">Verify Password</label>
             </div>
+            <!-- More v-directives this time to be able to send the form -->
             <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
             </button>
 

@@ -2,6 +2,8 @@ const router = require('express').Router();
 const Promise = require('bluebird')
 const db = require('./../models');
 
+// Is supposed to show all the threads a current user has
+
 router.get("/threads/:userId", function (req, res){
     db.Thread.find({
         userId: req.params.userId
@@ -10,6 +12,7 @@ router.get("/threads/:userId", function (req, res){
     })
 })
 
+// This creates a new thread for both users and a message 
 router.post("/threads", function(req,res){
     db.Thread.create(req.body).then(function(dbThread){
         Promise.join(

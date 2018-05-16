@@ -5,11 +5,10 @@
 
       <div class="row" id="google-map">
         <div class="col 8 push-s2">
-          <google-map></google-map>
         </div>
       </div>
       <br>
-
+      <!-- This calls the userMatches componenet so users are able to see which dogs they would like to hang out with  -->
       <userMatches v-for="dog in dogs" :dog="dog" :user="user" :key="dog.id" v-on:interface="foo"/>
       
       

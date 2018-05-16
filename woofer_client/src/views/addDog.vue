@@ -1,8 +1,7 @@
 <template>
-
   <div class="container">
     <div class="sign-up-form">
-
+      <!-- This is where Woofer Partners can add a god to share -->
       <h5 id="title">Thanks for sharing your dog's companionship.
         <br>Please add your Woofer below.</h5>
         <small>* All fields required</small>
@@ -46,20 +45,19 @@
               <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
               <label for="textarea1">Please enter a short description about your dog</label>
             </div>
-          </div> -->
+          </div>
 
           <div class="row">
             <div class="file-field input-field col s12">
               <div class="btn btn-small">
                 <span>Add image</span>
-                <input type="file">
+                <input id="img-up" class="file-path" name="imgPath" type="file">
               </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" placeholder="Upload an image of your dog" type="text" name="imgPath">
-              </div>
+
             </div>
           </div>
           <div class="row">
+          <!-- // The v:on click below is a Vue directive that add vue logic to the template -->
             <button v-on:click="sendForm" class="btn waves-effect waves-light" name='btn'>Submit
             </button>
           </div>
@@ -74,6 +72,7 @@
 </template>
 
 <script>
+// This imports the database. 
   import userServices from  "@/services/userServices";
 
   export default {
@@ -81,8 +80,17 @@
     props: ['user'],
     data(){
       return {
-        temp: ''
+        temp: '',
+        upload: '',
+        cloud_name: 'dd0fpirjd', 
+        api_key: '234985847271392', 
+        api_secret: 'MGpmvutEL_yROsxj_jVc2LxUYf0'
       }
+    },
+    computed: {
+        clUrl: function() {
+            return 'https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload'
+        }
     },
     methods : {
      async sendForm(e) {
@@ -101,12 +109,29 @@
     }
     },
     mounted(){ 
+      // This is to submit our form to the backend server 
        const elems = document.querySelectorAll('.datepicker');
        const instances = M.Datepicker.init(elems);
+    // This is the cloudniry logic to be able to upload pictures to their cloud
+        document.getElementById("img-up").addEventListener("click", function() {
+        cloudinary.openUploadWidget({ cloud_name: 'dd0fpirjd', 
+            upload_preset: 'hb40qhpx', 
+            cropping: 'server',
+            cropping_aspect_ratio: 1 ,
+            folder: 'Dog_Photos', 
+            sources: [ 'local', 'url', 'camera'], 
+            theme: 'minimal'}, 
+        function(error, result) { console.log(error, result); 
+            var image="https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload"+result[0].path; 
+                console.log(image) 
+                });
+                var url = cloudinary.url('Dog_Photos', {format: 'json', type: 'list'});
+                return url;
+                console.log(url);
+            }, 
+                false);
+        }
     }
-  }
-
-  // need to add code for sendForm
 
 </script>
 

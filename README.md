@@ -1,10 +1,17 @@
 # Woofer Dog Sharing App
+#### By Fourtastic
+
+### Team Members
+- Carlos Bejar (El Jefe, Front End and Back End Support)
+- Christine Pablo (Admin Support, Design, and Front End)
+- German Gamboa (Back End Architect and Lead)
+- Roshnee Acevedo (Back End and Front End Support)
 
 ### What is this?
 
 Woofer is a dog sharing service that offers the joy and companionship of a canine best friend whenever you need it.
 
-View the [Woofer App here](www.someURL.com)
+View the [Woofer App here](https://woofer-2018.herokuapp.com/)
 
 ### How does it work?
 
@@ -15,9 +22,15 @@ search for dogs in the area to schedule time with | add your dog to share in Par
 select dog(s) and send request to Partner         | receive and view requests in Partner Profile
 ability to message Partner regarding request      | accept or decline requests
 
-### Homepage Screenshot
+### Screenshots
+
+##### Homepage
 
 ![Woofer Homepage](woofer_client/src/assets/images/screenshot_home.jpg)
+
+##### Sign In Page
+
+![Woofer Sign In Page](woofer_client/src/assets/images/screenshot_signin.jpg)
 
 
 ### Technologies Applied
@@ -25,6 +38,7 @@ ability to message Partner regarding request      | accept or decline requests
 * [Vue.js](https://vuejs.org/)
 * [Materialize CSS](https://materializecss.com/)
 * [Sequelize](http://docs.sequelizejs.com/)
+* [Cloudinary](https://cloudinary.com/)
 * Node
 * Express
 * Axios

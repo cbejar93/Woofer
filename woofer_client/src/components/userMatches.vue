@@ -14,9 +14,15 @@
           <span id="matchName">{{dog.name}}</span>
         </h6>
 
-        <h6>Breed: <span id="breed">{{dog.breed}}</span></h6>
-        <h6>Gender: <span id="gender">{{dog.gender}}</span></h6>
-        <h6>Age: <span id="age">{{years}}</span></h6>
+        <h6>Breed:
+          <span id="breed">{{dog.breed}}</span>
+        </h6>
+        <h6>Gender:
+          <span id="gender">{{dog.gender}}</span>
+        </h6>
+        <h6>Age:
+          <span id="age">{{years}}</span>
+        </h6>
         <h6>Character:
           <span id="charDesc">{{dog.character}}</span>
         </h6>
@@ -24,28 +30,26 @@
         <button :data-target="dog.id" class="btn modal-trigger">Meet This Woofer</button>
       </div>
     </div>
-        <div v-bind:id="dog.id" class="modal">
-        <div class="modal-content">
-            <h4>Plan a Woofer Outing</h4>
-            <p>Where would you like to meet with {{dog.name}} ?</p>
-      
-         
-                <div class="row">
-                  <form id="addProp">
-                    <div class="input-field col s12">
-                      <textarea class="materialize-textarea" name="meetAddress"></textarea>
-                      <label for="textarea1">Where would you like to meet?</label>
-                    </div>
-                    <div class="modal-footer">
-                       <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                       <a v-on:click="sendForm"  class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                  </form>
-                </div>
+    <div v-bind:id="dog.id" class="modal">
+      <div class="modal-content">
+        <h4>Plan a Woofer Outing</h4>
+        <p>Where would you like to meet with {{dog.name}} ?</p>
 
-           
+
+        <div class="row">
+          <form id="addProp">
+            <div class="input-field col s12">
+              <textarea class="materialize-textarea" name="meetAddress"></textarea>
+              <label for="textarea1">Where would you like to meet?</label>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+              <a v-on:click="sendForm" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </form>
         </div>
 
+      </div>
     </div>
 
   </div>
@@ -81,18 +85,18 @@
         }, {});
 
         values.dogId = this.dog.id;
-        values.renter_id = this.user.id; 
+        values.renter_id = this.user.id;
         values.rentee_id = this.dog.userId;
         values.state = 0;
         const res = await userServices.addProposal(values);
         console.log(res);
- 
+
       }
-      
+
     },
     created() {
       this.calcYear();
-    
+
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
 
