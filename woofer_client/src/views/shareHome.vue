@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
 
-      <h5>Your Woofer Profile</h5>
+      <h5>Woofer Partner Profile</h5>
       <div class="row" id="btnSection">
         <button class="btn waves-effect waves-light right" type="submit" name="action" id="updateProfileBtn">Update Profile</button>
         <form action="addDog">
@@ -15,7 +15,7 @@
       <div class="row">
         <h6>Woofers You Share</h6>
         <!-- ------  This is more vue logic, for all the dogs that are in the object. ------  -->
-        <!-- // This is the Vue component -->
+        <!-- This is the Vue component -->
           <woofeeDog v-for="dog in dogs" :dog="dog" :key="dogs.id"/>
       </div>
       
