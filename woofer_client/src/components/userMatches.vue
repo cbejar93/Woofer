@@ -42,6 +42,15 @@
               <textarea class="materialize-textarea" name="meetAddress"></textarea>
               <label for="textarea1">Where would you like to meet?</label>
             </div>
+            <div class="input-field col s12">
+              <input type="text" class="datepicker" name="meetingDate">
+              <label for="textarea1">When would you like to meet?</label>
+            </div>
+       
+            <div class="input-field col s12">
+              <input type="text" class="timepicker" name="meetingTime">
+              <label for="textarea1">What time would you like to meet?</label>
+            </div>
             <div class="modal-footer">
               <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
               <a v-on:click="sendForm" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -97,8 +106,13 @@
     created() {
       this.calcYear();
 
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
+      var a = document.querySelectorAll('.modal');
+      var b = M.Modal.init(a);
+      var c = document.querySelectorAll('.datepicker');
+      var d = M.Datepicker.init(c);
+      var e = document.querySelectorAll('.timepicker');
+      var f = M.Timepicker.init(e);
+
 
     }
   };
@@ -130,6 +144,11 @@
 
   span {
     color: #797979;
+  }
+  
+  .modal {
+    width: 75%;
+    height: 75%;
   }
 
 </style>

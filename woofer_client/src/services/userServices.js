@@ -31,5 +31,8 @@ export default {
     },
     updateProposal(id,state){
         return Api().put(`props/updateprop/${state}/${id}`)
+    },
+    sendMsg(formData){
+        return Api().post(`msg/threads`, {formData})
     }
 }

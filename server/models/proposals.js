@@ -7,7 +7,9 @@ module.exports = function(sequelize, DataTypes) {
     renter_id: DataTypes.INTEGER,
     rentee_id: DataTypes.INTEGER,
     meetAddress: DataTypes.STRING,
-    state: DataTypes.INTEGER
+    state: DataTypes.INTEGER,
+    meetingDate: DataTypes.DATE,
+    meetingTime: DataTypes.STRING
   });
 
 

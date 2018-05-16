@@ -2,7 +2,7 @@
     <div class="woofeeDog">
         <div class="woofer col m4">
             <a href="#">
-                <img src="../assets/images/profile_sasha.jpg" class="dogImg" />
+                <img :src="dog.imgPath" class="dogImg" />
              </a>
             <!-- A vue instance that gives us several dog names -->
              <p>{{dog.name}}</p>
@@ -58,6 +58,11 @@
 
   #defaultCard {
     margin: 10px 0 30px 0;
+  }
+
+  img {
+    max-width: 200px; 
+    height: auto;
   }
 
 </style>
