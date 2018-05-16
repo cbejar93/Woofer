@@ -22,9 +22,15 @@ search for dogs in the area to schedule time with | add your dog to share in Par
 select dog(s) and send request to Partner         | receive and view requests in Partner Profile
 ability to message Partner regarding request      | accept or decline requests
 
-### Homepage Screenshot
+### Screenshots
 
+#### Homepage
+<br>
 ![Woofer Homepage](woofer_client/src/assets/images/screenshot_home.jpg)
+
+####
+<br>
+![Woofer Sign In Page](woofer_client/src/assets/images/screenshot_signin.jpg)
 
 
 ### Technologies Applied
