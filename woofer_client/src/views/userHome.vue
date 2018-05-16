@@ -5,7 +5,6 @@
 
       <div class="row" id="google-map">
         <div class="col 8 push-s2">
-          <google-map></google-map>
         </div>
       </div>
       <br>

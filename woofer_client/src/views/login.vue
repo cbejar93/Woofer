@@ -1,7 +1,6 @@
 <template>
 
   <div class="login">
-  // This is for the login 
     <div class="container">
       <div class="row">
         <h5 class="title">Welcome back to Woofer!</h5>
