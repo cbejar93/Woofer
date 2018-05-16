@@ -60,6 +60,7 @@
 </template>
 
 <script>
+
   import shareProposal from "../components/shareProposal";
   // A Vue component 
   import userServices from  "@/services/userServices";

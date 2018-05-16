@@ -5,8 +5,8 @@
     <div class="card horizontal z-depth-0" id="propCard">
       <div class="card-stacked">
         <div class="card-content">
-
-          <p id="date">{{proposal.createdAt}}</p>
+     
+          <p id="date">{{moment(proposal.createdAt).format("dddd, MMMM Do YYYY")}}</p>
           <p>
             <span id="userName">{{proposal.woofer.firstName}} {{proposal.woofer.lastName}}</span> would like to schedule time with
             <span id="dogName">{{proposal.dog.name}}</span>
@@ -36,7 +36,7 @@
       <div class="modal-content">
         <h5>Meeting Details for <span id="sharedDogName">{{proposal.dog.name}}</span></h5>
         <h6>Time requested by: <span id="renter_id">{{proposal.woofer.firstName}} {{proposal.woofer.lastName}}</span></h6>
-        <h6>Requested date and time: <span id="reqDateTime"> 5/17/18, 11:30am</span></h6>
+        <h6>Requested date and time: <span id="reqDateTime"> {{moment(proposal.meetingDate).format("dddd, MMMM Do YYYY")}}, {{proposal.meetingTime}}</span></h6>
         <h6>Meeting address: <span id="meetAddy">{{proposal.meetAddress}}</span></h6>
         
         <!-- EXTRA FEATURE ... user paws (star) rating? -->
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+  import moment from 'moment';
   import userServices from  "@/services/userServices";
   let nastyGlobal = []
   export default {
@@ -61,6 +62,7 @@
     data(){
       return {
         show: true,
+        moment: moment
   
       }
     },

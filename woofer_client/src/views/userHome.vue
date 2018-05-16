@@ -1,6 +1,7 @@
 <template>
   
     <div class="container">
+      <h4>Welcome, {{user.firstName}} {{user.lastName}}</h4>
       <h5>Your Companion Matches</h5>
 
       <div class="row" id="google-map">

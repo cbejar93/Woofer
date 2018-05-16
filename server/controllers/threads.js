@@ -12,8 +12,12 @@ router.get("/threads/:userId", function (req, res){
     })
 })
 
+// get user messages 
+
+
 // This creates a new thread for both users and a message 
 router.post("/threads", function(req,res){
+    req.body = req.body.formData;
     db.Thread.create(req.body).then(function(dbThread){
         Promise.join(
              db.UserThread.create({ThreadId: dbThread.id, UserId: req.body.senderId}),

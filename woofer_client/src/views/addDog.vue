@@ -49,9 +49,8 @@
 
           <div class="row">
             <div class="file-field input-field col s12">
-              <div class="btn btn-small">
+              <div v-on:click="openUpload" class="add-img btn btn-small">
                 <span>Add image</span>
-                <input id="img-up" class="file-path" name="imgPath" type="file">
               </div>
 
             </div>
@@ -72,28 +71,29 @@
 </template>
 
 <script>
-// This imports the database. 
-  import userServices from  "@/services/userServices";
+// This imports the database.
+import userServices from "@/services/userServices";
 
-  export default {
-    name: "adddog", 
-    props: ['user'],
-    data(){
-      return {
-        temp: '',
-        upload: '',
-        cloud_name: 'dd0fpirjd', 
-        api_key: '234985847271392', 
-        api_secret: 'MGpmvutEL_yROsxj_jVc2LxUYf0'
-      }
-    },
-    computed: {
-        clUrl: function() {
-            return 'https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload'
-        }
-    },
-    methods : {
-     async sendForm(e) {
+export default {
+  name: "adddog",
+  props: ["user"],
+  data() {
+    return {
+      temp: "",
+      upload: "",
+      cloud_name: "dd0fpirjd",
+      api_key: "234985847271392",
+      api_secret: "MGpmvutEL_yROsxj_jVc2LxUYf0",
+      imgPath: ""
+    };
+  },
+  computed: {
+    clUrl: function() {
+      return "https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload";
+    }
+  },
+  methods: {
+    async sendForm(e) {
       e.preventDefault();
 
       const form = document.querySelector("#addDog");
@@ -101,71 +101,75 @@
         obj[field.name] = field.value;
         return obj;
       }, {});
-
-      values.userId = this.user.id
+      values.userId = this.user.id;
+      values.imgPath = this.imgPath;
       const res = await userServices.addDog(values);
-      this.$router.push({path:'/shareprofile'})
-
-    }
+      this.$router.push({ path: "/shareprofile" });
     },
-    mounted(){ 
-      // This is to submit our form to the backend server 
-       const elems = document.querySelectorAll('.datepicker');
-       const instances = M.Datepicker.init(elems);
-    // This is the cloudniry logic to be able to upload pictures to their cloud
-        document.getElementById("img-up").addEventListener("click", function() {
-        cloudinary.openUploadWidget({ cloud_name: 'dd0fpirjd', 
-            upload_preset: 'hb40qhpx', 
-            cropping: 'server',
-            cropping_aspect_ratio: 1 ,
-            folder: 'Dog_Photos', 
-            sources: [ 'local', 'url', 'camera'], 
-            theme: 'minimal'}, 
-        function(error, result) { console.log(error, result); 
-            var image="https://api.cloudinary.com/v1_1/dd0fpirjd/image/upload"+result[0].path; 
-                console.log(image) 
-                });
-                var url = cloudinary.url('Dog_Photos', {format: 'json', type: 'list'});
-                return url;
-                console.log(url);
-            }, 
-                false);
+    openUpload() {
+      cloudinary.openUploadWidget(
+        {
+          cloud_name: "dd0fpirjd",
+          upload_preset: "hb40qhpx",
+          cropping: "server",
+          cropping_aspect_ratio: 1,
+          folder: "Dog_Photos",
+          sources: ["local", "url", "camera"],
+          theme: "minimal"
+        },
+       (error, result) => {
+          console.log(error, result);
+          var image =
+            "http://res.cloudinary.com/dd0fpirjd/image/upload/" +
+            result[0].path;
+          this.imgPath = image;
         }
+      );
     }
-
+  },
+  mounted() {
+    // This is to submit our form to the backend server
+    const elems = document.querySelectorAll(".datepicker");
+    const instances = M.Datepicker.init(elems);
+  }
+};
 </script>
 
 <style>
-  .sign-up-form {
-    width: 90%;
-    margin: 1em auto;
-  }
+.sign-up-form {
+  width: 90%;
+  margin: 1em auto;
+}
 
-  #addDog {
-    border: 1px solid #10C5CC;
-  }
+#addDog {
+  border: 1px solid #10c5cc;
+}
 
-  button {
-    float: right;
-    margin: 1em;
-  }
+button {
+  float: right;
+  margin: 1em;
+}
 
-  .card {
-    padding: 2em;
-  }
+.card {
+  padding: 2em;
+}
 
-  h5 {
-    margin: 20px 0;
-    padding: 20px 0;
-  }
+h5 {
+  margin: 20px 0;
+  padding: 20px 0;
+}
 
-  #inputFileBtn {
-    margin: 0 0 10px 0;
-  }
+#inputFileBtn {
+  margin: 0 0 10px 0;
+}
 
-  #pageDogImg {
-    display: block;
-    margin: 0 auto;
-  }
+#pageDogImg {
+  display: block;
+  margin: 0 auto;
+}
 
+.add-img{
+  width:100%;
+  margin: auto;
+}
 </style>
