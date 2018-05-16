@@ -7,6 +7,10 @@
                     <p>
                       <span id="userName">You've requested woofee {{proposal.woofee.firstName}} {{proposal.woofee.lastName}}</span> 
                       <span id="dogName"> to hang out with {{proposal.dog.name}}</span>
+                      <p>{{proposal.woofee.firstName}} has 
+                      <span v-if="proposal.state == 1">accepted.</span>
+                      <span v-else-if="proposal.state == 2">declined</span>
+                      <span v-else>not responded yet.</span></p>
                     </p>
           
                     <div class="card-action">

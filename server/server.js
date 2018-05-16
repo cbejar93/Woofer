@@ -19,7 +19,7 @@ app.use(cors());
 app.use(bodyParser.json());
 // Use controllers
 
-app.use('/',serveStatic(__dirname + "/dist"));
+// app.use('/',serveStatic(__dirname + "/dist"));
 
 app.use('/api/renter', renter);
 app.use('/api/rentee', rentee);

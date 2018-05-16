@@ -88,7 +88,7 @@
            item.dog = (await this.getDogsById(item.dogId)).data
            this.$set(this.proposals, index , item)
         });
-  
+   
       },
       async getDogsById(id){
         return await userServices.getDogById(id)
